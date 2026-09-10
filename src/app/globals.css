@@ -1,26 +1,170 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   --background: oklch(0.97 0.02 70);
+   /* Deep brown text */
+   --foreground: oklch(0.25 0.04 70);
+   /* Soft cream card */
+   --card: oklch(0.98 0.01 70);
+   /* Dark brown card text */
+   --card-foreground: oklch(0.22 0.04 70);
+   /* Cream popover */
+   --popover: oklch(0.97 0.02 70);
+   /* Dark brown popover text */
+   --popover-foreground: oklch(0.22 0.04 70);
+   /* Terracotta primary */
+   --primary: oklch(0.56 0.16 40);
+
+   /* Cream primary foreground */
+   --primary-foreground: oklch(0.97 0.02 70);
+   /* Light sage secondary */
+   --secondary: oklch(0.72 0.08 140);
+   /* Dark brown secondary text */
+   --secondary-foreground: oklch(0.25 0.04 70);
+   /* Light sage muted */
+   --muted: oklch(0.78 0.06 140);
+   /* Muted foreground */
+   --muted-foreground: oklch(0.45 0.04 70);
+   /* Warm accent */
+   --accent: oklch(0.58 0.15 30);
+   /* Cream accent text */
+   --accent-foreground: oklch(0.97 0.02 70);
+   /* Destructive red */
+   --destructive: oklch(0.577 0.245 27.325);
+   /* Destructive foreground */
+   --destructive-foreground: oklch(0.97 0.02 70);
+   /* Subtle border */
+   --border: oklch(0.9 0.03 70);
+   /* Input background */
+   --input: oklch(0.95 0.02 70);
+   /* Focus ring */
+   --ring: oklch(0.56 0.16 40);
+   /* Chart colors - earth tones */
+   --chart-1: oklch(0.56 0.16 40);
+   --chart-2: oklch(0.72 0.08 140);
+   --chart-3: oklch(0.65 0.12 60);
+   --chart-4: oklch(0.58 0.15 30);
+   --chart-5: oklch(0.7 0.1 90);
+   --radius: 0.625rem;
+   /* Sidebar - same as background */
+   --sidebar: oklch(0.97 0.02 70);
+   --sidebar-foreground: oklch(0.25 0.04 70);
+   --sidebar-primary: oklch(0.56 0.16 40);
+   --sidebar-primary-foreground: oklch(0.97 0.02 70);
+   --sidebar-accent: oklch(0.72 0.08 140);
+   --sidebar-accent-foreground: oklch(0.25 0.04 70);
+   --sidebar-border: oklch(0.9 0.03 70);
+   --sidebar-ring: oklch(0.56 0.16 40);
+}
+
+.dark {
+   --background: oklch(0.15 0.02 70);
+   /* Cream text */
+   --foreground: oklch(0.94 0.02 70);
+   --primary: oklch(0.68 0.14 40);
+   /* Dark brown primary text */
+   --primary-foreground: oklch(0.15 0.02 70);
+   --primary: oklch(0.56 0.16 40);
+   /* Cream primary foreground */
+   --primary-foreground: oklch(0.97 0.02 70);
+   /* Light sage secondary */
+   --secondary: oklch(0.72 0.08 140);
+   /* Dark brown secondary text */
+   --secondary-foreground: oklch(0.25 0.04 70);
+
+   --secondary: oklch(0.62 0.1 140);
+   /* Cream secondary text */
+   --secondary-foreground: oklch(0.94 0.02 70);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+   :root {
+      --background: oklch(0.97 0.02 70);
+      /* Deep brown text */
+      --foreground: oklch(0.25 0.04 70);
+
+      --backup: hsl(32, 83%, 95%);
+   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+   background: var(--background);
+   color: var(--foreground);
+   font-family: Lexend, Andika, sans-serif;
+}
+
+html[data-theme="blackWhite"] {
+   --color-primary: rgb(251, 251, 251);
+   --color-secondary: #ffffff;
+   --color-tercary: #ffffff;
+   --color-main: #000000;
+   --color-typography: #ffffff;
+   --color-light: #000000;
+   --color-cardPrimary: #000000;
+   --color-alert: #ffffff;
+   --color-cookies: #1c1c1d;
+   --color-tipTapLink: #ccc2c2;
+   --color-tipTapLinkHover: #dddcdc;
+   --color-tipTapText: #ffffff;
+   --color-tipTapQuote: #ffffff;
+   --color-tipTapH3: #ffffff;
+}
+
+html[data-theme="reverse"] {
+   --color-primary: #ffff00;
+   --color-secondary: #ffff00;
+   --color-tercary: #ffff00;
+   --color-main: #000080;
+   --color-typography: #ffff00;
+   --color-light: #000080;
+   --color-cardPrimary: #ffff00;
+   --color-alert: #ffff00;
+   --color-cookies: #000080;
+   --color-tipTapLink: #fbfb05;
+   --color-tipTapLinkHover: #fdfd81;
+   --color-tipTapText: #ffff00;
+   --color-tipTapQuote: #ffff00;
+   --color-tipTapH3: #ffff00;
+}
+
+html[data-theme="whiteDark"] {
+   --color-primary: rgb(6, 6, 6);
+   --color-secondary: #000000;
+   --color-tercary: #040404;
+   --color-main: #fdfdfd;
+   --color-typography: #040404;
+   --color-light: #ffffff;
+   --color-cardPrimary: #000000;
+   --color-alert: #040404;
+   --color-cookies: #ebf1fd;
+   --color-tipTapLink: #373a3f;
+   --color-tipTapLinkHover: #1a1a1b;
+   --color-tipTapText: #616161;
+   --color-tipTapQuote: #555;
+   --color-tipTapH3: #444;
+}
+
+.navLink {
+   font-size: large;
+
+   &:hover {
+      font-weight: bold;
+      /* font-size: larger; */
+   }
+}
+
+.logo-naming {
+   font-family: --font-grandHotel;
+}
+
+.selected-url {
+   color: var(--primary);
 }
