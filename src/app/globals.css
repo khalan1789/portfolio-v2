@@ -3,7 +3,9 @@
 
 :root {
    --background: oklch(0.97 0.02 70);
+   /* --background: oklch(48.894% 0.1926 348.964); */
    /* Deep brown text */
+   /* --foreground: oklch(0.25 0.04 70); */
    --foreground: oklch(0.25 0.04 70);
    /* Soft cream card */
    --card: oklch(0.98 0.01 70);
@@ -58,7 +60,7 @@
    --sidebar-ring: oklch(0.56 0.16 40);
 }
 
-.dark {
+[data-theme="dark"] {
    --background: oklch(0.15 0.02 70);
    /* Cream text */
    --foreground: oklch(0.94 0.02 70);
