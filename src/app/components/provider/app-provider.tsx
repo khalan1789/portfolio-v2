@@ -8,12 +8,6 @@ type Props = {
 };
 
 export default function AppProvider({ children }: Props) {
-   // const [theme, setTheme] = useState<Theme>(
-   //    () => (localStorage.getItem("theme") as Theme) ?? "light",
-   // );
-   // const [locale, setLocale] = useState<Locale>(
-   //    () => (localStorage.getItem("locale") as Locale) ?? "fr",
-   // );
    const [theme, setTheme] = useState<Theme>("light");
    const [locale, setLocale] = useState<Locale>("fr");
    const themeValue = useMemo(() => ({ theme, setTheme }), [theme]);

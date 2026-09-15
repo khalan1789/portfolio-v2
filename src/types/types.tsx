@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type Theme = "light" | "dark" | "mono" | "yellowblue";
+export type Theme = "light" | "dark" | "monoWhite" | "yellowblue" | "monoDark";
 
 export type Locale = "fr" | "en";
 
