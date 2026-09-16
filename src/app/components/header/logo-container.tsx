@@ -7,7 +7,7 @@ export default function LogoContainer() {
       <div className="flex content-center ml-[3vw] ">
          <Logo width={40} height={40} />
          <p
-            className={`${grandHotel.className} text-3xl flex items-center ml-[10px]`}
+            className={`${grandHotel.className} text-xl lg:text-3xl flex items-center ml-[10px]`}
          >
             Benjamin Ducau
          </p>

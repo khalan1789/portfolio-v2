@@ -21,7 +21,8 @@ export default function RootLayout({
          className={`${luciole.variable} ${lexend.variable} h-full antialiased`}
          suppressHydrationWarning
       >
-         <body className="min-h-full flex flex-col">
+         {/* <body className="min-h-full flex flex-col"> */}
+         <body className="min-h-full ">
             <Script id="thematic" strategy="beforeInteractive">
                {`
             try {

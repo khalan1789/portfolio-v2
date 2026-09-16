@@ -1,0 +1,8 @@
+.navbar-mobile-container {
+   display: flex;
+   position: absolute;
+   background: var(--background);
+   top: 0;
+   z-index: 200;
+   width: 100%;
+}

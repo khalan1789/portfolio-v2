@@ -10,8 +10,6 @@ import { useTheme } from "@/context/useTheme";
 import { Locale, Theme } from "@/types/types";
 
 export default function QuickSwitchContainer() {
-   // const [isEnglishMode, setIsEnglishMode] = useState<boolean>(false);
-   // const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
    const locale = useLocale();
    const theme = useTheme();
    const isEnglishMode = locale?.locale === "en";
@@ -68,10 +66,6 @@ export default function QuickSwitchContainer() {
    return (
       <div className="flex justify-between items-center w-full p-2">
          <button
-            // onClick={() => {
-            //    theme?.setTheme(isDarkMode ? "light" : "dark");
-            //    return setIsDarkMode(!isDarkMode);
-            // }}
             onClick={handleTheme}
             className="cursor-pointer w-[30px] h-[30px]"
          >
