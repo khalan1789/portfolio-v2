@@ -1,7 +1,6 @@
 "use client";
 import "./navbar-mobile.css";
 import React, { useState } from "react";
-import { Url } from "@/types/types";
 import { useLocale } from "@/context/useLocale";
 import Link from "next/link";
 
@@ -17,7 +16,6 @@ export default function NavbarMobile() {
    return (
       <div
          className={` flex ${isOpen ? "absolute top-0 z-40 bg-background w-full border-bottom shadow-xl/20 shadow-primary pb-16" : "mr-[10px]  items-center flex-col pt-3"}`}
-         //className={`${isOpen ? "absolute top-0 primary-foreground w-full z-40 flex align-top" : "mr-[10px] flex items-center flex-col pt-3"} border`}
       >
          {isOpen && (
             <nav className="flex flex-col justify-center items-center mt-[1vw] w-full">
@@ -37,10 +35,8 @@ export default function NavbarMobile() {
          )}
          <button
             onClick={(e) => toggleMenu(e)}
-            // className={`cursor-pointer flex flex-col border w-[35px] ${isOpen && "items-start mr-1"}`}
             className={`flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none ${isOpen && "w-[40px] mt-3 mr-2"}`}
          >
-            {/* <span className={`navBar-mobile ${isOpen && "open"}`}></span> */}
             <span
                className={`block w-6 h-0.5 bg-foreground transition-all duration-200 ${isOpen && "rotate-45 translate-y-2 w-7"}`}
             ></span>

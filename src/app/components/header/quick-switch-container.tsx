@@ -64,7 +64,7 @@ export default function QuickSwitchContainer() {
    };
 
    return (
-      <div className="flex justify-between items-center w-full p-2">
+      <div className="flex min-w-[160px] justify-around p-2 ml-auto mr-2 sm:mr-4 items-center lg:justify-between lg:w-full lg:ml-0 lg:mr-0 lg:min-w-auto ">
          <button
             onClick={handleTheme}
             className="cursor-pointer w-[30px] h-[30px]"

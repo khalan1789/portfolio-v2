@@ -2,28 +2,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+   /* Cream primary foreground */
    --background: oklch(0.97 0.02 70);
-   /* --background: oklch(48.894% 0.1926 348.964); */
+   --releved: oklch(93.668% 0.01888 67.471);
+
    /* Deep brown text */
    /* --foreground: oklch(0.25 0.04 70); */
-   --foreground: oklch(0.25 0.04 70);
-   /* Soft cream card */
-   --card: oklch(0.98 0.01 70);
-   /* Dark brown card text */
-   --card-foreground: oklch(0.22 0.04 70);
-   /* Cream popover */
-   --popover: oklch(0.97 0.02 70);
-   /* Dark brown popover text */
-   --popover-foreground: oklch(0.22 0.04 70);
-   /* Terracotta primary */
+   --secondary: oklch(0.25 0.04 70);
+
    --primary: oklch(0.56 0.16 40);
 
-   /* Cream primary foreground */
-   --primary-foreground: oklch(0.97 0.02 70);
    /* Light sage secondary */
-   --secondary: oklch(0.72 0.08 140);
-   /* Dark brown secondary text */
-   --secondary-foreground: oklch(0.25 0.04 70);
+   --tercary: oklch(0.72 0.08 140);
+
    /* Light sage muted */
    --muted: oklch(0.78 0.06 140);
    /* Muted foreground */
@@ -37,33 +28,12 @@
    /* Destructive foreground */
    --destructive-foreground: oklch(0.97 0.02 70);
    /* Subtle border */
-   --border: oklch(0.9 0.03 70);
-   /* Input background */
-   --input: oklch(0.95 0.02 70);
-   /* Focus ring */
-   --ring: oklch(0.56 0.16 40);
-   /* Chart colors - earth tones */
-   --chart-1: oklch(0.56 0.16 40);
-   --chart-2: oklch(0.72 0.08 140);
-   --chart-3: oklch(0.65 0.12 60);
-   --chart-4: oklch(0.58 0.15 30);
-   --chart-5: oklch(0.7 0.1 90);
-   --radius: 0.625rem;
-   /* Sidebar - same as background */
-   --sidebar: oklch(0.97 0.02 70);
-   --sidebar-foreground: oklch(0.25 0.04 70);
-   --sidebar-primary: oklch(0.56 0.16 40);
-   --sidebar-primary-foreground: oklch(0.97 0.02 70);
-   --sidebar-accent: oklch(0.72 0.08 140);
-   --sidebar-accent-foreground: oklch(0.25 0.04 70);
-   --sidebar-border: oklch(0.9 0.03 70);
-   --sidebar-ring: oklch(0.56 0.16 40);
 }
 
 [data-theme="dark"] {
    --background: oklch(0.15 0.02 70);
    /* Cream text */
-   --foreground: oklch(0.94 0.02 70);
+   --secondary: oklch(0.94 0.02 70);
    --primary: oklch(0.68 0.14 40);
    /* Dark brown primary text */
    --primary-foreground: oklch(0.15 0.02 70);
@@ -91,7 +61,7 @@
    :root {
       --background: oklch(0.97 0.02 70);
       /* Deep brown text */
-      --foreground: oklch(0.25 0.04 70);
+      --secondary: oklch(0.25 0.04 70);
 
       --backup: hsl(32, 83%, 95%);
    }
@@ -99,7 +69,7 @@
 
 body {
    background: var(--background);
-   color: var(--foreground);
+   color: var(--secondary);
    font-family: Lexend, Andika, sans-serif;
 }
 
