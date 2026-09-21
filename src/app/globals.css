@@ -4,124 +4,105 @@
 :root {
    /* Cream primary foreground */
    --background: oklch(0.97 0.02 70);
-   --releved: oklch(93.668% 0.01888 67.471);
-
-   /* Deep brown text */
-   /* --foreground: oklch(0.25 0.04 70); */
-   --secondary: oklch(0.25 0.04 70);
-
+   --light: oklch(85.318% 0.00808 73.535);
+   --typography: oklch(0.45 0.04 70);
    --primary: oklch(0.56 0.16 40);
 
+   --secondary: oklch(0.97 0.02 70); /* Cream also*/
+   --tercary: oklch(0.25 0.04 70); /* H1 and big titles*/
    /* Light sage secondary */
-   --tercary: oklch(0.72 0.08 140);
-
-   /* Light sage muted */
-   --muted: oklch(0.78 0.06 140);
-   /* Muted foreground */
-   --muted-foreground: oklch(0.45 0.04 70);
+   --hero-light: oklch(0.72 0.08 140);
+   --card: oklch(98% 0.01 62.262);
    /* Warm accent */
-   --accent: oklch(0.58 0.15 30);
-   /* Cream accent text */
-   --accent-foreground: oklch(0.97 0.02 70);
-   /* Destructive red */
-   --destructive: oklch(0.577 0.245 27.325);
-   /* Destructive foreground */
-   --destructive-foreground: oklch(0.97 0.02 70);
-   /* Subtle border */
+   --accent: oklch(45.463% 0.04005 70.841);
+
+   --alert: oklch(0.577 0.245 27.325);
 }
 
 [data-theme="dark"] {
-   --background: oklch(0.15 0.02 70);
-   /* Cream text */
-   --secondary: oklch(0.94 0.02 70);
-   --primary: oklch(0.68 0.14 40);
-   /* Dark brown primary text */
-   --primary-foreground: oklch(0.15 0.02 70);
+   --background: oklch(17.051% 0.02964 115.422);
+   --light: hsl(32, 83%, 95%);
+   --typography: oklch(0.45 0.04 70);
    --primary: oklch(0.56 0.16 40);
-   /* Cream primary foreground */
-   --primary-foreground: oklch(0.97 0.02 70);
-   /* Light sage secondary */
-   --secondary: oklch(0.72 0.08 140);
-   /* Dark brown secondary text */
-   --secondary-foreground: oklch(0.25 0.04 70);
-
-   --secondary: oklch(0.62 0.1 140);
-   /* Cream secondary text */
-   --secondary-foreground: oklch(0.94 0.02 70);
+   --secondary: oklch(0.94 0.02 70);
+   --tercary: oklch(0.25 0.04 70);
+   --hero-light: oklch(0.72 0.08 140);
+   --card: oklch(98% 0.01 62.262);
+   --alert: oklch(0.577 0.245 27.325);
 }
 
 @theme inline {
    --color-background: var(--background);
+   --color-light: var(--light);
    --color-foreground: var(--foreground);
-   --font-sans: var(--font-geist-sans);
-   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-   :root {
-      --background: oklch(0.97 0.02 70);
-      /* Deep brown text */
-      --secondary: oklch(0.25 0.04 70);
-
-      --backup: hsl(32, 83%, 95%);
-   }
+   --color-primary: var(--primary);
+   --color-secondary: var(--secondary);
+   --color-tercary: var(--tercary);
+   --color-alert: var(--alert);
+   --color-card: var(--card);
+   --color-typography: var(--typography);
+   --font-sans:
+      var(--font-luciole), var(--font-lexend), ui-sans-serif, system-ui,
+      sans-serif;
 }
 
 body {
    background: var(--background);
-   color: var(--secondary);
-   font-family: Lexend, Andika, sans-serif;
+   color: var(--typography);
+   font-family: var(--font-sans);
 }
 
-html[data-theme="blackWhite"] {
-   --color-primary: rgb(251, 251, 251);
-   --color-secondary: #ffffff;
-   --color-tercary: #ffffff;
-   --color-main: #000000;
-   --color-typography: #ffffff;
-   --color-light: #000000;
-   --color-cardPrimary: #000000;
-   --color-alert: #ffffff;
-   --color-cookies: #1c1c1d;
-   --color-tipTapLink: #ccc2c2;
-   --color-tipTapLinkHover: #dddcdc;
-   --color-tipTapText: #ffffff;
-   --color-tipTapQuote: #ffffff;
-   --color-tipTapH3: #ffffff;
+[data-theme="monoWhite"] {
+   --primary: rgb(251, 251, 251);
+   --secondary: #ffffff;
+   --tercary: #ffffff;
+   --background: #000000;
+   --typography: #ffffff;
+   --light: #000000;
+   --alert: #ffffff;
+   --hero-light: oklch(0.72 0.08 140);
+   --card: #000000;
+   /* Warm accent */
+   --accent: oklch(45.463% 0.04005 70.841);
+   --alert: oklch(0.577 0.245 27.325);
 }
 
-html[data-theme="reverse"] {
-   --color-primary: #ffff00;
-   --color-secondary: #ffff00;
-   --color-tercary: #ffff00;
-   --color-main: #000080;
-   --color-typography: #ffff00;
-   --color-light: #000080;
-   --color-cardPrimary: #ffff00;
-   --color-alert: #ffff00;
-   --color-cookies: #000080;
-   --color-tipTapLink: #fbfb05;
-   --color-tipTapLinkHover: #fdfd81;
-   --color-tipTapText: #ffff00;
-   --color-tipTapQuote: #ffff00;
-   --color-tipTapH3: #ffff00;
+[data-theme="yellowblue"] {
+   --primary: #ffff00;
+   --secondary: #000080;
+   --tercary: #ffff00;
+   --background: #000080;
+   --typography: #ffff00;
+   --light: #000080;
+   --cardPrimary: #ffff00;
+   --alert: #ffff00;
+   --hero-light: oklch(0.72 0.08 140);
+   --card: #000080;
+   /* Warm accent */
+   --accent: oklch(45.463% 0.04005 70.841);
+
+   --alert: oklch(0.577 0.245 27.325);
+}
+[data-theme="monoDark"] {
+   --primary: rgb(6, 6, 6);
+   --secondary: #000000;
+   --tercary: #040404;
+   --background: #fdfdfd;
+   --typography: #040404;
+   --light: #ffffff;
+   --alert: #040404;
+   --hero-light: oklch(0.72 0.08 140);
+   --card: rgb(6, 6, 6) (98% 0.01 62.262);
+   /* Warm accent */
+   --accent: oklch(45.463% 0.04005 70.841);
+
+   --alert: oklch(0.577 0.245 27.325);
 }
 
-html[data-theme="whiteDark"] {
-   --color-primary: rgb(6, 6, 6);
-   --color-secondary: #000000;
-   --color-tercary: #040404;
-   --color-main: #fdfdfd;
-   --color-typography: #040404;
-   --color-light: #ffffff;
-   --color-cardPrimary: #000000;
-   --color-alert: #040404;
-   --color-cookies: #ebf1fd;
-   --color-tipTapLink: #373a3f;
-   --color-tipTapLinkHover: #1a1a1b;
-   --color-tipTapText: #616161;
-   --color-tipTapQuote: #555;
-   --color-tipTapH3: #444;
+[data-font="dyslexic"] {
+   --font-sans:
+      var(--font-openDyslexic), var(--font-lexend), ui-sans-serif, system-ui,
+      sans-serif;
 }
 
 .navLink {

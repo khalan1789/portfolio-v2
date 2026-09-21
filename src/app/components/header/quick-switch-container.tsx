@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import Image from "next/image";
 import british from "../../../../public/icons/british-frame--32.png";
 import france from "../../../../public/icons/france-frame-32.png";
@@ -19,11 +18,7 @@ export default function QuickSwitchContainer() {
    };
 
    const showDarkModeIcon = () => {
-      return theme?.theme === "dark"
-         ? light
-         : theme?.theme === "light"
-           ? moon
-           : null;
+      return theme?.theme === "dark" ? light : moon;
    };
 
    const handleTheme = () => {

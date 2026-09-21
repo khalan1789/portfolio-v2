@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 import AppProvider from "./components/provider/app-provider";
-import { luciole, lexend } from "./styles/styles";
+import { luciole, lexend, openDyslexic } from "./styles/styles";
 import Header from "./components/header/header";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
    return (
       <html
          lang="fr"
-         className={`${luciole.variable} ${lexend.variable} h-full antialiased`}
+         className={`${luciole.variable} ${lexend.variable} ${openDyslexic.variable} h-full antialiased`}
          suppressHydrationWarning
       >
          {/* <body className="min-h-full flex flex-col"> */}
@@ -30,6 +30,8 @@ export default function RootLayout({
               if (themeInfo) document.documentElement.setAttribute('data-theme', themeInfo);
               var localeInfo = localStorage.getItem('locale');
               if (localeInfo) document.documentElement.lang = localeInfo;
+              var fontInfo = localStorage.getItem('font');
+              if (fontInfo) document.documentElement.setAttribute('data-font', fontInfo);
             } catch (e) {
              console.log(e)}   
           `}

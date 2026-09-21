@@ -32,3 +32,26 @@ export const grandHotel = Grand_Hotel({
    variable: "--font-grandHotel",
    weight: "400",
 });
+
+export const openDyslexic = localFont({
+   src: [
+      {
+         path: "./fonts/OpenDyslexic-Regular.otf",
+         style: "normal",
+         weight: "400",
+      },
+      {
+         path: "./fonts/OpenDyslexic-Italic.otf",
+         style: "italic",
+         weight: "400",
+      },
+      { path: "./fonts/OpenDyslexic-Bold.otf", style: "normal", weight: "700" },
+      {
+         path: "./fonts/OpenDyslexic-BoldItalic.otf",
+         style: "italic",
+         weight: "700",
+      },
+   ],
+   variable: "--font-openDyslexic",
+   display: "swap",
+});
