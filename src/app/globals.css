@@ -52,7 +52,7 @@ body {
    font-family: var(--font-sans);
 }
 
-[data-theme="monoWhite"] {
+[data-theme="blackAndWhite"] {
    --primary: rgb(251, 251, 251);
    --secondary: #ffffff;
    --tercary: #ffffff;
@@ -67,7 +67,7 @@ body {
    --alert: oklch(0.577 0.245 27.325);
 }
 
-[data-theme="yellowblue"] {
+[data-theme="yellowOnBlue"] {
    --primary: #ffff00;
    --secondary: #000080;
    --tercary: #ffff00;
@@ -83,7 +83,7 @@ body {
 
    --alert: oklch(0.577 0.245 27.325);
 }
-[data-theme="monoDark"] {
+[data-theme="whiteAndBlack"] {
    --primary: rgb(6, 6, 6);
    --secondary: #000000;
    --tercary: #040404;

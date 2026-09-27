@@ -1,19 +1,24 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import access1 from "../../../../public/icons/accessibilite(4).png";
+import Image, { StaticImageData } from "next/image";
+import accessBase from "../../../../public/icons/accessibilite.png";
 import { useLocale } from "@/context/useLocale";
 import ToggleButton from "../button/toggle-button";
 import { useTheme } from "@/context/useTheme";
 import { Theme } from "@/types/types";
 import CloseButton from "../button/close-button";
 import useFont from "@/context/useFont";
+import settingBlackAndWhite from "../../../../public/icons/accessibility-monoDark.svg";
+import settingBase from "../../../../public/icons/accessibilite_base.png";
+import settingYellow from "../../../../public/icons/accessibility-yellowBlue.svg";
+import settingDarkMode from "../../../../public/icons/accessibility-darkmode.svg";
+import settingWhiteAndBlack from "../../../../public/icons/accessibility-monoWhite.svg";
 
 export default function AccessibilityModal() {
    const locale = useLocale();
    const theme = useTheme();
    const font = useFont();
-   const [isOpen, setIsOpen] = useState<boolean>(true);
+   const [isOpen, setIsOpen] = useState<boolean>(false);
 
    const toggleOpening = (e: React.MouseEvent) => {
       e.preventDefault();
@@ -37,6 +42,10 @@ export default function AccessibilityModal() {
       locale?.locale === "en"
          ? "button to activate colorblindness mode"
          : "bouton pour activer le mode daltonien";
+   const ariaColorDark =
+      locale?.locale === "en"
+         ? "button to activate dark mode"
+         : "bouton pour activer le mode sombre";
 
    const defaultTheme: Theme = "light";
 
@@ -48,8 +57,25 @@ export default function AccessibilityModal() {
 
    const toggleFont = () => {
       return font!.font === "dyslexic"
-         ? font?.setFont("default")
-         : font?.setFont("dyslexic");
+         ? (font?.setFont("default"), localStorage.setItem("font", "default"))
+         : (font?.setFont("dyslexic"),
+           localStorage.setItem("font", "dyslexic"));
+   };
+
+   const setAccessibilityIcon = (): StaticImageData | undefined => {
+      if (theme?.theme === "whiteAndBlack") return settingBlackAndWhite;
+      if (theme?.theme === "blackAndWhite") return settingWhiteAndBlack;
+      if (theme?.theme === "dark") return settingDarkMode;
+      if (theme?.theme === "yellowOnBlue") return settingYellow;
+      return settingBase;
+   };
+
+   const resetSettings = (e: React.MouseEvent) => {
+      e.preventDefault();
+      theme?.setTheme(defaultTheme);
+      localStorage.setItem("theme", defaultTheme);
+      font?.setFont("default");
+      localStorage.setItem("font", "default");
    };
 
    return (
@@ -57,9 +83,10 @@ export default function AccessibilityModal() {
          <button
             onClick={(e) => toggleOpening(e)}
             aria-roledescription={ariaOpenAccessibilityButtonDescription}
+            className="cursor-pointer"
          >
             <Image
-               src={access1}
+               src={setAccessibilityIcon() ?? accessBase}
                width={40}
                height={40}
                alt="bouton de réglage pour les paramètres d'accessibilité"
@@ -94,9 +121,9 @@ export default function AccessibilityModal() {
                         ? "Black and white mode"
                         : "Mode Noir et Blanc"
                   }
-                  toggleAction={() => toggleTheme("monoWhite")}
-                  isChecked={theme?.theme === "monoWhite"}
-                  ariaRoleDescription={ariaWhiteAndBlack}
+                  toggleAction={() => toggleTheme("blackAndWhite")}
+                  isChecked={theme?.theme === "blackAndWhite"}
+                  ariaRoleDescription={ariaBlackAndWhite}
                />
                <ToggleButton
                   id={"button-monoWhite"}
@@ -105,9 +132,9 @@ export default function AccessibilityModal() {
                         ? "White and Black mode"
                         : "Mode Blanc et Noir"
                   }
-                  toggleAction={() => toggleTheme("monoDark")}
-                  isChecked={theme?.theme === "monoDark"}
-                  ariaRoleDescription={ariaBlackAndWhite}
+                  toggleAction={() => toggleTheme("whiteAndBlack")}
+                  isChecked={theme?.theme === "whiteAndBlack"}
+                  ariaRoleDescription={ariaWhiteAndBlack}
                />
                <ToggleButton
                   id={"button-yellowblue"}
@@ -116,9 +143,16 @@ export default function AccessibilityModal() {
                         ? "Colorblindness mode"
                         : "Mode daltonisme"
                   }
-                  toggleAction={() => toggleTheme("yellowblue")}
-                  isChecked={theme?.theme === "yellowblue"}
+                  toggleAction={() => toggleTheme("yellowOnBlue")}
+                  isChecked={theme?.theme === "yellowOnBlue"}
                   aria-roledescription={ariaColorblindness}
+               />
+               <ToggleButton
+                  id={"button-yellowblue"}
+                  label={locale?.locale === "en" ? "Dark mode" : "Mode sombre "}
+                  toggleAction={() => toggleTheme("dark")}
+                  isChecked={theme?.theme === "dark"}
+                  aria-roledescription={ariaColorDark}
                />
                <p className="mt-3 mb-2 text-center">
                   {locale?.locale === "en" ? "Typography" : " Police"}
@@ -133,6 +167,14 @@ export default function AccessibilityModal() {
                   isChecked={font?.font === "dyslexic"}
                   toggleAction={() => toggleFont()}
                />
+               <button
+                  className="mt-7 cursor-pointer underline hover:font-bold block ml-auto mr-auto"
+                  onClick={(e) => resetSettings(e)}
+               >
+                  {locale?.locale === "en"
+                     ? "Reset settings"
+                     : "Réinitialiser les réglages "}
+               </button>
             </div>
          )}
       </>

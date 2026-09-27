@@ -3,26 +3,53 @@ import Image from "next/image";
 import british from "../../../../public/icons/british-frame--32.png";
 import france from "../../../../public/icons/france-frame-32.png";
 import moon from "../../../../public/icons/lune.png";
-import light from "../../../../public/icons/light.svg";
+import lightDarkMode from "../../../../public/icons/light-darkmode.svg";
+import lightBlackAndWhiteMode from "../../../../public/icons/light-monoWhite.svg";
+import lightWhiteAndBlackMode from "../../../../public/icons/light-monoDark.svg";
+import lightYellow from "../../../../public/icons/light-yellowBlue.svg";
 import { useLocale } from "@/context/useLocale";
 import { useTheme } from "@/context/useTheme";
 import { Locale, Theme } from "@/types/types";
+import britshDarkMode from "../../../../public/icons/union-jack-darkmode.svg";
+import britshBlackAndWhite from "../../../../public/icons/union-jack-monoBlack.svg";
+import britshWhiteAndBlack from "../../../../public/icons/union-jack-monoWhite.svg";
+import britshYellowBlue from "../../../../public/icons/union-jack-yellowBlue.svg";
+import franceDarkMode from "../../../../public/icons/france-darkmode.svg";
+import franceBlackAndWhite from "../../../../public/icons/france-monoBlack.svg";
+import franceWhiteAndBlack from "../../../../public/icons/france-monoWhite.svg";
+import franceYellowBlue from "../../../../public/icons/france-yellowBlue.svg";
 
 export default function QuickSwitchContainer() {
    const locale = useLocale();
    const theme = useTheme();
    const isEnglishMode = locale?.locale === "en";
-   const isDarkMode = theme?.theme === "dark";
+   const isLightMode = theme?.theme === "light";
    const showLocaleIcon = () => {
-      return locale?.locale === "en" ? british : france;
+      if (locale?.locale === "en") {
+         if (theme?.theme === "dark") return britshDarkMode;
+         if (theme?.theme === "blackAndWhite") return britshWhiteAndBlack;
+         if (theme?.theme === "whiteAndBlack") return britshBlackAndWhite;
+         if (theme?.theme === "yellowOnBlue") return britshYellowBlue;
+         return british;
+      } else {
+         if (theme?.theme === "dark") return franceDarkMode;
+         if (theme?.theme === "blackAndWhite") return franceWhiteAndBlack;
+         if (theme?.theme === "whiteAndBlack") return franceBlackAndWhite;
+         if (theme?.theme === "yellowOnBlue") return franceYellowBlue;
+         return france;
+      }
    };
 
    const showDarkModeIcon = () => {
-      return theme?.theme === "dark" ? light : moon;
+      if (theme?.theme === "dark") return lightDarkMode;
+      if (theme?.theme === "yellowOnBlue") return lightYellow;
+      if (theme?.theme === "whiteAndBlack") return lightWhiteAndBlackMode;
+      if (theme?.theme === "blackAndWhite") return lightBlackAndWhiteMode;
+      return moon;
    };
 
    const handleTheme = () => {
-      if (isDarkMode) {
+      if (!isLightMode) {
          theme?.setTheme("light");
          localStorage.setItem("theme", "light" as Theme);
       } else {
@@ -42,7 +69,7 @@ export default function QuickSwitchContainer() {
    };
 
    const darmModeAltInFrench = `logo du drapeau de la ${isEnglishMode ? "France" : "Grande Bretagne"} `;
-   const darmModeAltInEnglish = `${isDarkMode ? "France" : "Great Britain"} flag logo`;
+   const darmModeAltInEnglish = `${isLightMode ? "France" : "Great Britain"} flag logo`;
 
    const returnDarkModeAlt = () => {
       return locale && locale.locale === "en"
@@ -50,8 +77,8 @@ export default function QuickSwitchContainer() {
          : darmModeAltInFrench;
    };
 
-   const localeAltInFrench = `symbole de ${isDarkMode ? "lumière" : "lune"}`;
-   const localeAltInEnglish = `${isDarkMode ? "light" : "moon"} symbol`;
+   const localeAltInFrench = `symbole de ${isLightMode ? "lumière" : "lune"}`;
+   const localeAltInEnglish = `${isLightMode ? "light" : "moon"} symbol`;
    const returnLocaleAlt = () => {
       return locale && locale.locale === "en"
          ? localeAltInEnglish
@@ -81,6 +108,9 @@ export default function QuickSwitchContainer() {
                height={40}
                alt={returnLocaleAlt()}
             />
+            <span className="italic h-3">
+               {locale?.locale === "en" ? "EN" : "FR"}
+            </span>
          </button>
       </div>
    );

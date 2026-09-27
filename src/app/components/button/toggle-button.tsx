@@ -14,7 +14,7 @@ export default function ToggleButton({
    toggleAction,
 }: Props) {
    return (
-      <div className="flex items-center justify-between mt-4 ">
+      <div className="flex items-center justify-between mt-4">
          {label && (
             <label htmlFor={id} className="align-middle">
                {label}

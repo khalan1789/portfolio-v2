@@ -17,9 +17,9 @@ export default function Logo({ width, height }: Props) {
    const returnGoodLogo = () => {
       if (theme?.theme === "light") return logoLight;
       if (theme?.theme === "dark") return logoDark;
-      if (theme?.theme === "monoDark") return logoMonoDark;
-      if (theme?.theme === "monoWhite") return logoMonoWhite;
-      if (theme?.theme === "yellowblue") return logoYellowBlue;
+      if (theme?.theme === "blackAndWhite") return logoMonoDark;
+      if (theme?.theme === "whiteAndBlack") return logoMonoWhite;
+      if (theme?.theme === "yellowOnBlue") return logoYellowBlue;
       return null;
    };
    return (
