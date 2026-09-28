@@ -4,21 +4,16 @@ import { Url } from "@/types/types";
 type Props = {
    href: Url;
    label: string;
-   selectedUrl: Url;
-   onClickAction: (url: Url) => void;
+   selectedUrl: string;
 };
 
-export default function NavLink({
-   label,
-   href,
-   selectedUrl,
-   onClickAction,
-}: Props) {
+export default function NavLink({ label, href, selectedUrl }: Props) {
+   const isCurrentPage = selectedUrl === href;
    return (
       <Link
          href={href}
-         className={`navLink ${selectedUrl && selectedUrl === href ? "selected-url" : ""}`}
-         onClick={() => onClickAction(href)}
+         className={`navLink ${isCurrentPage ? "selected-url" : ""}`}
+         aria-current={isCurrentPage ? "page" : undefined}
       >
          {label}
       </Link>

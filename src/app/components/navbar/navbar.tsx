@@ -1,42 +1,33 @@
 "use client";
-import { useState } from "react";
 import NavLink from "./navLink";
-import { Url } from "@/types/types";
 import { useLocale } from "@/context/useLocale";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-   const [urlPageInfo, setUrlPageInfo] = useState<Url>("/");
    const locale = useLocale();
-
-   const changeUrlPageInfo = (url: Url) => {
-      return setUrlPageInfo(url);
-   };
+   const pathName = usePathname();
 
    return (
       <div className="flex w-full justify-around items-center h-full">
          <NavLink
             href={"/"}
             label={locale?.locale === "en" ? "Home" : "Accueil"}
-            onClickAction={changeUrlPageInfo}
-            selectedUrl={urlPageInfo}
+            selectedUrl={pathName}
          />
          <NavLink
             href={"/about"}
             label={locale?.locale === "en" ? "About" : "À propos"}
-            onClickAction={changeUrlPageInfo}
-            selectedUrl={urlPageInfo}
+            selectedUrl={pathName}
          />
          <NavLink
             href={"/experience"}
             label={locale?.locale === "en" ? "Experience" : "Expériences"}
-            onClickAction={changeUrlPageInfo}
-            selectedUrl={urlPageInfo}
+            selectedUrl={pathName}
          />
          <NavLink
             href={"/skills"}
             label={locale?.locale === "en" ? "Skills" : "Compétences"}
-            onClickAction={changeUrlPageInfo}
-            selectedUrl={urlPageInfo}
+            selectedUrl={pathName}
          />
       </div>
    );

@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /src/context/old.css
+/public/icons/accessibilite(5).png
+/public/icons/accessibilite.png
+/public/icons/accessibilite_dark.png
+/public/icons/accessibilite_white.png
