@@ -3,10 +3,12 @@ import "./navbar-mobile.css";
 import React, { useState } from "react";
 import { useLocale } from "@/context/useLocale";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavbarMobile() {
    const locale = useLocale();
    const [isOpen, setIsOpen] = useState<boolean>(false);
+   const pathName = usePathname();
 
    const toggleMenu = (e: React.MouseEvent) => {
       e.preventDefault();
@@ -19,16 +21,32 @@ export default function NavbarMobile() {
       >
          {isOpen && (
             <nav className="flex flex-col justify-center items-center mt-[1vw] w-full">
-               <Link href={"/"} className="mt-8">
+               <Link
+                  href={"/"}
+                  className="mt-8"
+                  aria-current={pathName === "/" ? "page" : undefined}
+               >
                   {locale?.locale === "en" ? "Home" : "Accueil"}
                </Link>
-               <Link href={"/about"} className="mt-8">
+               <Link
+                  href={"/about"}
+                  className="mt-8"
+                  aria-current={pathName === "/" ? "page" : undefined}
+               >
                   {locale?.locale === "en" ? "About" : "À propos"}
                </Link>
-               <Link href={"/experience"} className="mt-8">
+               <Link
+                  href={"/experience"}
+                  className="mt-8"
+                  aria-current={pathName === "/" ? "page" : undefined}
+               >
                   {locale?.locale === "en" ? "Experience" : "Expériences"}
                </Link>
-               <Link href={"/skills"} className="mt-8">
+               <Link
+                  href={"/skills"}
+                  className="mt-8"
+                  aria-current={pathName === "/skills" ? "page" : undefined}
+               >
                   {locale?.locale === "en" ? "Skills" : "Compétences"}
                </Link>
             </nav>
@@ -36,15 +54,26 @@ export default function NavbarMobile() {
          <button
             onClick={(e) => toggleMenu(e)}
             className={`flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none ${isOpen && "w-[40px] mt-3 mr-2"}`}
+            type="button"
+            aria-label={
+               isOpen
+                  ? locale?.locale === "en"
+                     ? "Close menu"
+                     : "Fermer le menu"
+                  : locale?.locale === "en"
+                    ? "Open menu"
+                    : "Ouvrir le menu"
+            }
+            aria-expanded={isOpen}
          >
             <span
-               className={`block w-6 h-0.5 bg-foreground transition-all duration-200 ${isOpen && "rotate-45 translate-y-2 w-7"}`}
+               className={`block w-6 h-0.5 bg-primary transition-all duration-200 ${isOpen && "rotate-45 translate-y-2 w-7"}`}
             ></span>
             <span
-               className={`block w-6 h-0.5 bg-foreground transition-all duration-200 ${isOpen && "opacity-0"}`}
+               className={`block w-6 h-0.5 bg-primary transition-all duration-200 ${isOpen && "opacity-0"}`}
             ></span>
             <span
-               className={`block w-6 h-0.5 bg-foreground transition-all duration-200 ${isOpen && "-rotate-45 -translate-y-2 w-7"}`}
+               className={`block w-6 h-0.5 bg-primary transition-all duration-200 ${isOpen && "-rotate-45 -translate-y-2 w-7"}`}
             ></span>
          </button>
       </div>

@@ -68,8 +68,8 @@ export default function QuickSwitchContainer() {
       }
    };
 
-   const darmModeAltInFrench = `logo du drapeau de la ${isEnglishMode ? "France" : "Grande Bretagne"} `;
-   const darmModeAltInEnglish = `${isLightMode ? "France" : "Great Britain"} flag logo`;
+   const darmModeAltInFrench = `symbole de ${isLightMode ? "lumière" : "lune"}`;
+   const darmModeAltInEnglish = `${isLightMode ? "light" : "moon"} symbol`;
 
    const returnDarkModeAlt = () => {
       return locale && locale.locale === "en"
@@ -77,8 +77,8 @@ export default function QuickSwitchContainer() {
          : darmModeAltInFrench;
    };
 
-   const localeAltInFrench = `symbole de ${isLightMode ? "lumière" : "lune"}`;
-   const localeAltInEnglish = `${isLightMode ? "light" : "moon"} symbol`;
+   const localeAltInFrench = `logo du drapeau de la ${isEnglishMode ? "France" : "Grande Bretagne"}`;
+   const localeAltInEnglish = `${isLightMode ? "France" : "Great Britain"} flag logo`;
    const returnLocaleAlt = () => {
       return locale && locale.locale === "en"
          ? localeAltInEnglish
@@ -90,6 +90,12 @@ export default function QuickSwitchContainer() {
          <button
             onClick={handleTheme}
             className="cursor-pointer w-[30px] h-[30px]"
+            type="button"
+            aria-label={
+               locale?.locale === "en"
+                  ? "Change theme button"
+                  : "Bouton pour changer de thème"
+            }
          >
             <Image
                src={showDarkModeIcon()}
@@ -101,6 +107,12 @@ export default function QuickSwitchContainer() {
          <button
             onClick={handleLocale}
             className="cursor-pointer w-[30px] h-[30px]"
+            type="button"
+            aria-label={
+               locale?.locale === "en"
+                  ? "Change language button"
+                  : "Bouton pour changer de langue"
+            }
          >
             <Image
                src={showLocaleIcon()}

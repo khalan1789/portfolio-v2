@@ -84,6 +84,7 @@ export default function AccessibilityModal() {
             onClick={(e) => toggleOpening(e)}
             aria-roledescription={ariaOpenAccessibilityButtonDescription}
             className="cursor-pointer"
+            type="button"
          >
             <Image
                src={setAccessibilityIcon() ?? accessBase}
