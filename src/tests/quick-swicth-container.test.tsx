@@ -95,4 +95,24 @@ describe("quickSwitchContainer", () => {
       expect(within(localeButton).getByText("EN")).toBeInTheDocument();
       expect(within(localeButton).queryByText("FR")).not.toBeInTheDocument();
    });
+
+   it("should persist the theme and locales change to localStorage", async () => {
+      renderWithProvider("fr", "light");
+      const user = userEvent.setup();
+      const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
+
+      await user.click(
+         screen.getByRole("button", {
+            name: "Bouton pour changer de thème",
+         }),
+      );
+      await user.click(
+         screen.getByRole("button", {
+            name: "Bouton pour changer de langue",
+         }),
+      );
+
+      expect(setItemSpy).toHaveBeenCalledWith("theme", "dark");
+      expect(setItemSpy).toHaveBeenCalledWith("locale", "en");
+   });
 });

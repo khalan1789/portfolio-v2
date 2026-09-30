@@ -24,34 +24,45 @@ export default function AccessibilityModal() {
       setIsOpen(!isOpen);
    };
 
-   const ariaOpenAccessibilityButtonDescription =
+   const ariaRoleOpenAccessibilityButtonDescription =
       locale?.locale === "en"
          ? "accessibility button opening"
          : "bouton d'ouverture pour l'accessibilité";
 
-   const ariaBlackAndWhite =
+   const ariaLabelOpenAccessibilityButton =
+      locale?.locale === "en"
+         ? "accessibility button"
+         : "bouton pour l'accessibilité";
+
+   const ariaRoleBlackAndWhite =
       locale?.locale === "en"
          ? "button to activate black and white mode"
          : "bouton pour activer le mode noir et blanc";
-   const ariaWhiteAndBlack =
+   const ariaRoleWhiteAndBlack =
       locale?.locale === "en"
          ? "button to activate white and black mode"
          : "bouton pour activer le mode blanc et noir ";
-   const ariaColorblindness =
+   const ariaRoleColorblindness =
       locale?.locale === "en"
          ? "button to activate colorblindness mode"
          : "bouton pour activer le mode daltonien";
-   const ariaColorDark =
+   const ariaRoleColorDark =
       locale?.locale === "en"
          ? "button to activate dark mode"
          : "bouton pour activer le mode sombre";
+
+   const ariaRoleFont =
+      locale?.locale === "en"
+         ? "button to activate dyslexic font"
+         : "bouton switch pour activer la police dyslexique";
 
    const defaultTheme: Theme = "light";
 
    const toggleTheme = (newTheme: Theme) => {
       return theme?.theme === newTheme
-         ? theme!.setTheme(defaultTheme)
-         : theme!.setTheme(newTheme);
+         ? (theme!.setTheme(defaultTheme),
+           localStorage.setItem("theme", defaultTheme))
+         : (theme!.setTheme(newTheme), localStorage.setItem("theme", newTheme));
    };
 
    const toggleFont = () => {
@@ -81,7 +92,8 @@ export default function AccessibilityModal() {
       <>
          <button
             onClick={(e) => toggleOpening(e)}
-            aria-roledescription={ariaOpenAccessibilityButtonDescription}
+            aria-roledescription={ariaRoleOpenAccessibilityButtonDescription}
+            aria-label={ariaLabelOpenAccessibilityButton}
             className="cursor-pointer"
             type="button"
          >
@@ -89,7 +101,11 @@ export default function AccessibilityModal() {
                src={setAccessibilityIcon() ?? settingBase}
                width={40}
                height={40}
-               alt="bouton de réglage pour les paramètres d'accessibilité"
+               alt={
+                  locale?.locale === "en"
+                     ? "accessibilty settings button"
+                     : "bouton de réglage pour les paramètres d'accessibilité"
+               }
             />
          </button>
          {isOpen && (
@@ -102,11 +118,16 @@ export default function AccessibilityModal() {
                            ? "close accessibility modal button"
                            : "bouton pour fermer la fenêtre d'accessibilité"
                      }
+                     ariaLabel={
+                        locale?.locale === "en"
+                           ? "closing button"
+                           : "bouton de fermeture"
+                     }
                   />
                </div>
                <h3 className="text-center text-lg mb-5">
                   {locale?.locale === "en"
-                     ? "Accessibility settings "
+                     ? "Accessibility settings"
                      : "Paramètres d'accessibilité"}
                </h3>
                <p className="mb-3 text-center">
@@ -118,12 +139,12 @@ export default function AccessibilityModal() {
                   id={"button-monoDark"}
                   label={
                      locale?.locale === "en"
-                        ? "Black and white mode"
+                        ? "Black and White mode"
                         : "Mode Noir et Blanc"
                   }
                   toggleAction={() => toggleTheme("blackAndWhite")}
                   isChecked={theme?.theme === "blackAndWhite"}
-                  ariaRoleDescription={ariaBlackAndWhite}
+                  ariaRoleDescription={ariaRoleBlackAndWhite}
                />
                <ToggleButton
                   id={"button-monoWhite"}
@@ -134,7 +155,7 @@ export default function AccessibilityModal() {
                   }
                   toggleAction={() => toggleTheme("whiteAndBlack")}
                   isChecked={theme?.theme === "whiteAndBlack"}
-                  ariaRoleDescription={ariaWhiteAndBlack}
+                  ariaRoleDescription={ariaRoleWhiteAndBlack}
                />
                <ToggleButton
                   id={"button-yellowblue"}
@@ -145,14 +166,14 @@ export default function AccessibilityModal() {
                   }
                   toggleAction={() => toggleTheme("yellowOnBlue")}
                   isChecked={theme?.theme === "yellowOnBlue"}
-                  aria-roledescription={ariaColorblindness}
+                  ariaRoleDescription={ariaRoleColorblindness}
                />
                <ToggleButton
-                  id={"button-yellowblue"}
-                  label={locale?.locale === "en" ? "Dark mode" : "Mode sombre "}
+                  id={"button-darkMode"}
+                  label={locale?.locale === "en" ? "Dark mode" : "Mode sombre"}
                   toggleAction={() => toggleTheme("dark")}
                   isChecked={theme?.theme === "dark"}
-                  aria-roledescription={ariaColorDark}
+                  ariaRoleDescription={ariaRoleColorDark}
                />
                <p className="mt-3 mb-2 text-center">
                   {locale?.locale === "en" ? "Typography" : " Police"}
@@ -166,6 +187,7 @@ export default function AccessibilityModal() {
                   }
                   isChecked={font?.font === "dyslexic"}
                   toggleAction={() => toggleFont()}
+                  ariaRoleDescription={ariaRoleFont}
                />
                <button
                   className="mt-7 cursor-pointer underline hover:font-bold block ml-auto mr-auto"
@@ -173,7 +195,7 @@ export default function AccessibilityModal() {
                >
                   {locale?.locale === "en"
                      ? "Reset settings"
-                     : "Réinitialiser les réglages "}
+                     : "Réinitialiser les réglages"}
                </button>
             </div>
          )}
