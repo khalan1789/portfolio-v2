@@ -68,8 +68,8 @@ export default function QuickSwitchContainer() {
       }
    };
 
-   const darmModeAltInFrench = `symbole de ${isLightMode ? "lumière" : "lune"}`;
-   const darmModeAltInEnglish = `${isLightMode ? "light" : "moon"} symbol`;
+   const darmModeAltInFrench = `symbole de ${isLightMode ? "lune" : "lumière"}`;
+   const darmModeAltInEnglish = `${isLightMode ? "moon" : "light"} symbol`;
 
    const returnDarkModeAlt = () => {
       return locale && locale.locale === "en"
