@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import accessBase from "../../../../public/icons/accessibilite.png";
 import { useLocale } from "@/context/useLocale";
 import ToggleButton from "../button/toggle-button";
 import { useTheme } from "@/context/useTheme";
@@ -87,7 +86,7 @@ export default function AccessibilityModal() {
             type="button"
          >
             <Image
-               src={setAccessibilityIcon() ?? accessBase}
+               src={setAccessibilityIcon() ?? settingBase}
                width={40}
                height={40}
                alt="bouton de réglage pour les paramètres d'accessibilité"

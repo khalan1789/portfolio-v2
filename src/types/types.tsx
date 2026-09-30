@@ -1,11 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 export type Theme =
-   | "light"
-   | "dark"
-   | "whiteAndBlack"
-   | "yellowOnBlue"
-   | "blackAndWhite";
+   "light" | "dark" | "whiteAndBlack" | "yellowOnBlue" | "blackAndWhite";
 
 export type Locale = "fr" | "en";
 
