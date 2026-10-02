@@ -10,10 +10,10 @@ import lightYellow from "../../../../public/icons/light-yellowBlue.svg";
 import { useLocale } from "@/context/useLocale";
 import { useTheme } from "@/context/useTheme";
 import { Locale, Theme } from "@/types/types";
-import britshDarkMode from "../../../../public/icons/union-jack-darkmode.svg";
-import britshBlackAndWhite from "../../../../public/icons/union-jack-monoBlack.svg";
-import britshWhiteAndBlack from "../../../../public/icons/union-jack-monoWhite.svg";
-import britshYellowBlue from "../../../../public/icons/union-jack-yellowBlue.svg";
+import britishDarkMode from "../../../../public/icons/union-jack-darkmode.svg";
+import britishBlackAndWhite from "../../../../public/icons/union-jack-monoBlack.svg";
+import britishWhiteAndBlack from "../../../../public/icons/union-jack-monoWhite.svg";
+import britishYellowBlue from "../../../../public/icons/union-jack-yellowBlue.svg";
 import franceDarkMode from "../../../../public/icons/france-darkmode.svg";
 import franceBlackAndWhite from "../../../../public/icons/france-monoBlack.svg";
 import franceWhiteAndBlack from "../../../../public/icons/france-monoWhite.svg";
@@ -26,10 +26,10 @@ export default function QuickSwitchContainer() {
    const isLightMode = theme?.theme === "light";
    const showLocaleIcon = () => {
       if (locale?.locale === "en") {
-         if (theme?.theme === "dark") return britshDarkMode;
-         if (theme?.theme === "blackAndWhite") return britshWhiteAndBlack;
-         if (theme?.theme === "whiteAndBlack") return britshBlackAndWhite;
-         if (theme?.theme === "yellowOnBlue") return britshYellowBlue;
+         if (theme?.theme === "dark") return britishDarkMode;
+         if (theme?.theme === "blackAndWhite") return britishWhiteAndBlack;
+         if (theme?.theme === "whiteAndBlack") return britishBlackAndWhite;
+         if (theme?.theme === "yellowOnBlue") return britishYellowBlue;
          return british;
       } else {
          if (theme?.theme === "dark") return franceDarkMode;
@@ -68,8 +68,8 @@ export default function QuickSwitchContainer() {
       }
    };
 
-   const darmModeAltInFrench = `symbole de ${isLightMode ? "lumière" : "lune"}`;
-   const darmModeAltInEnglish = `${isLightMode ? "light" : "moon"} symbol`;
+   const darmModeAltInFrench = `symbole de ${isLightMode ? "lune" : "lumière"}`;
+   const darmModeAltInEnglish = `${isLightMode ? "moon" : "light"} symbol`;
 
    const returnDarkModeAlt = () => {
       return locale && locale.locale === "en"
