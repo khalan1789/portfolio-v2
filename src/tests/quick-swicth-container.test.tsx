@@ -8,6 +8,22 @@ import userEvent from "@testing-library/user-event";
 import { LocaleContext, ThemeContext } from "@/context/Context";
 import { Locale, Theme } from "@/types/types";
 import { useState } from "react";
+import britishDarkMode from "../../public/icons/union-jack-darkmode.svg";
+import british from "../../public/icons/british-frame--32.png";
+import britishBlackAndWhite from "../../public/icons/union-jack-monoBlack.svg";
+import britishWhiteAndBlack from "../../public/icons/union-jack-monoWhite.svg";
+import britishYellowBlue from "../../public/icons/union-jack-yellowBlue.svg";
+import france from "../../public/icons/france-frame-32.png";
+import franceDarkMode from "../../public/icons/france-darkmode.svg";
+import franceBlackAndWhite from "../../public/icons/france-monoBlack.svg";
+import franceWhiteAndBlack from "../../public/icons/france-monoWhite.svg";
+import franceYellowBlue from "../../public/icons/france-yellowBlue.svg";
+import { resolveSrc } from "./helpers-test";
+import moon from "../../public/icons/lune.png";
+import lightDarkMode from "../../public/icons/light-darkmode.svg";
+import lightBlackAndWhiteMode from "../../public/icons/light-monoWhite.svg";
+import lightWhiteAndBlackMode from "../../public/icons/light-monoDark.svg";
+import lightYellow from "../../public/icons/light-yellowBlue.svg";
 
 function renderWithProvider(initialLocale: Locale, initialTheme: Theme) {
    function Wrapper() {
@@ -115,4 +131,55 @@ describe("quickSwitchContainer", () => {
       expect(setItemSpy).toHaveBeenCalledWith("theme", "dark");
       expect(setItemSpy).toHaveBeenCalledWith("locale", "en");
    });
+});
+
+describe("quickSwitchContainer, showned icons by theme", () => {
+   it.each([
+      ["light", france],
+      ["dark", franceDarkMode],
+      ["blackAndWhite", franceWhiteAndBlack],
+      ["whiteAndBlack", franceBlackAndWhite],
+      ["yellowOnBlue", franceYellowBlue],
+   ] as const)(
+      "should show the correct locale icon when theme is %s and locale french",
+      (theme, expectedIcon) => {
+         renderWithProvider("fr", theme as Theme);
+         const icon = screen.getByRole("img", {
+            name: /logo du drapeau de la /i,
+         });
+         expect(icon).toHaveAttribute("src", resolveSrc(expectedIcon));
+      },
+   );
+   it.each([
+      ["light", british],
+      ["dark", britishDarkMode],
+      ["blackAndWhite", britishWhiteAndBlack],
+      ["whiteAndBlack", britishBlackAndWhite],
+      ["yellowOnBlue", britishYellowBlue],
+   ] as const)(
+      "should show the correct locale icon when theme is %s and locale english",
+      (theme, expectedIcon) => {
+         renderWithProvider("en", theme as Theme);
+         const icon = screen.getByRole("img", {
+            name: /flag logo/i,
+         });
+         expect(icon).toHaveAttribute("src", resolveSrc(expectedIcon));
+      },
+   );
+   it.each([
+      ["light", moon],
+      ["dark", lightDarkMode],
+      ["blackAndWhite", lightBlackAndWhiteMode],
+      ["whiteAndBlack", lightWhiteAndBlackMode],
+      ["yellowOnBlue", lightYellow],
+   ] as const)(
+      "should show the correct theme icon when theme is %s",
+      (theme, expectedIcon) => {
+         renderWithProvider("fr", theme as Theme);
+         const icon = screen.getByRole("img", {
+            name: /symbole de/i,
+         });
+         expect(icon).toHaveAttribute("src", resolveSrc(expectedIcon));
+      },
+   );
 });

@@ -7,6 +7,7 @@ import logoMonoDark from "../../../../public/images/logo-mono-noir-sur-blanc.svg
 import logoMonoWhite from "../../../../public/images/logo-mono-blanc-sur-noir.svg";
 import logoYellowBlue from "../../../../public/images/logo-yellow-blue.svg";
 import { useTheme } from "@/context/useTheme";
+import { useLocale } from "@/context/useLocale";
 type Props = {
    width: number;
    height: number;
@@ -14,6 +15,8 @@ type Props = {
 
 export default function Logo({ width, height }: Props) {
    const theme = useTheme();
+   const locale = useLocale();
+
    const returnGoodLogo = () => {
       if (theme?.theme === "light") return logoLight;
       if (theme?.theme === "dark") return logoDark;
@@ -26,8 +29,7 @@ export default function Logo({ width, height }: Props) {
       <>
          <Image
             src={returnGoodLogo()}
-            alt="Logo cliquable"
-            aria-description="Logo du site, cliquable pour revenir à la pague d'accueil"
+            alt={locale?.locale === "en" ? "website logo" : "logo du site"}
             width={width}
             height={height}
             className="color-secondary"

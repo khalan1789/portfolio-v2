@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import AccessibilityModal from "@/app/components/modal/accessibility-modal";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
@@ -8,6 +8,12 @@ import { FontContext, LocaleContext, ThemeContext } from "@/context/Context";
 import { useState } from "react";
 import { Font, Locale, Theme } from "@/types/types";
 import userEvent from "@testing-library/user-event";
+import settingBlackAndWhite from "../../public/icons/accessibility-monoDark.svg";
+import settingBase from "../../public/icons/accessibilite_base.png";
+import settingYellow from "../../public/icons/accessibility-yellowBlue.svg";
+import settingDarkMode from "../../public/icons/accessibility-darkmode.svg";
+import settingWhiteAndBlack from "../../public/icons/accessibility-monoWhite.svg";
+import { resolveSrc } from "./helpers-test";
 
 function renderWithProvider(
    initialLocale: Locale,
@@ -32,6 +38,11 @@ function renderWithProvider(
 }
 
 describe("accessibility modal", () => {
+   it("should have no accessibility violations when closed", async () => {
+      const { container } = render(<AccessibilityModal />);
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+   });
    it("should have no accessibility violations when open", async () => {
       const { container } = render(<AccessibilityModal />);
       const user = userEvent.setup();
@@ -245,4 +256,62 @@ describe("accessibility modal", () => {
 
       expect(setItemSpy).toHaveBeenCalledWith("theme", "blackAndWhite");
    });
+
+   it("should be usable by tab once open", async () => {
+      renderWithProvider("fr", "light", "default");
+      const user = userEvent.setup();
+
+      await user.click(
+         screen.getByRole("button", { name: "bouton pour l'accessibilité" }),
+      );
+
+      await user.tab();
+      expect(
+         screen.getByRole("button", {
+            name: "bouton de fermeture",
+         }),
+      ).toHaveFocus();
+
+      await user.tab();
+      expect(
+         screen.getByRole("switch", { name: "Mode Noir et Blanc" }),
+      ).toHaveFocus();
+      await user.tab();
+      expect(
+         screen.getByRole("switch", { name: "Mode Blanc et Noir" }),
+      ).toHaveFocus();
+      await user.tab();
+      expect(
+         screen.getByRole("switch", { name: "Mode daltonisme" }),
+      ).toHaveFocus();
+      await user.tab();
+      expect(screen.getByRole("switch", { name: "Mode sombre" })).toHaveFocus();
+      await user.tab();
+      expect(
+         screen.getByRole("switch", { name: "Mode dyslexique" }),
+      ).toHaveFocus();
+      await user.tab();
+      expect(
+         screen.getByRole("button", { name: /Réinitialiser/i }),
+      ).toHaveFocus();
+   });
+});
+
+describe("accessibily modal, icon showned", () => {
+   it.each([
+      ["light", settingBase],
+      ["dark", settingDarkMode],
+      ["blackAndWhite", settingWhiteAndBlack],
+      ["whiteAndBlack", settingBlackAndWhite],
+      ["yellowOnBlue", settingYellow],
+   ] as const)(
+      "should show the correct icon when theme is %s",
+      (theme, expectedIcon) => {
+         renderWithProvider("fr", theme as Theme, "default");
+         const icon = screen.getByRole("img", {
+            name: "bouton de réglage pour les paramètres d'accessibilité",
+         });
+         expect(icon).toHaveAttribute("src", resolveSrc(expectedIcon));
+      },
+   );
 });

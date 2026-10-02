@@ -192,6 +192,7 @@ export default function AccessibilityModal() {
                <button
                   className="mt-7 cursor-pointer underline hover:font-bold block ml-auto mr-auto"
                   onClick={(e) => resetSettings(e)}
+                  type="button"
                >
                   {locale?.locale === "en"
                      ? "Reset settings"
