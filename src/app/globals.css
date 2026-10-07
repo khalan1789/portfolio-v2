@@ -4,7 +4,7 @@
 :root {
    /* Cream primary foreground */
    --background: oklch(0.97 0.02 70);
-   --light: oklch(85.318% 0.00808 73.535);
+   --light: oklch(97.508% 0.01061 76.456);
    --typography: oklch(0.45 0.04 70);
    --primary: oklch(0.56 0.16 40);
 
@@ -21,13 +21,13 @@
 
 [data-theme="dark"] {
    --background: oklch(17.051% 0.02964 115.422);
-   --light: hsl(32, 83%, 95%);
-   --typography: oklch(0.45 0.04 70);
+   --light: hsl(33, 26%, 83%);
+   --typography: oklch(0.97 0.02 70);
    --primary: oklch(0.56 0.16 40);
    --secondary: oklch(0.94 0.02 70);
-   --tercary: oklch(0.25 0.04 70);
+   --tercary: oklch(81.16% 0.02815 72.695);
    --hero-light: oklch(0.72 0.08 140);
-   --card: oklch(98% 0.01 62.262);
+   --card: oklch(17.051% 0.02964 115.422);
    --alert: oklch(0.577 0.245 27.325);
 }
 
@@ -105,18 +105,20 @@ body {
       sans-serif;
 }
 
-.navLink {
-   font-size: large;
-
-   &:hover {
-      font-weight: bold;
-   }
-}
-
 .logo-naming {
    font-family: --font-grandHotel;
 }
 
 .selected-url {
    color: var(--primary);
+}
+
+.profile-bg {
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+      0deg,
+      oklch(0.15 0.03 40 / 0.78) 0%,
+      oklch(0.15 0.03 40 / 0) 30%
+   );
 }
