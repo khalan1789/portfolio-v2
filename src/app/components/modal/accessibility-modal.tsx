@@ -109,7 +109,7 @@ export default function AccessibilityModal() {
             />
          </button>
          {isOpen && (
-            <div className="fixed top-[90px] right-0 w-[380px] p-4 border bg-card">
+            <div className="fixed top-[90px] right-0 w-[380px] p-4 border bg-card z-10">
                <div className="flex justify-end  w-full mb-2">
                   <CloseButton
                      onClickAction={() => setIsOpen(!isOpen)}
