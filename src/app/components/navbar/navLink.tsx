@@ -12,7 +12,7 @@ export default function NavLink({ label, href, selectedUrl }: Props) {
    return (
       <Link
          href={href}
-         className={`navLink ${isCurrentPage ? "selected-url" : ""}`}
+         className={`text-xl hover:font-bold ${isCurrentPage ? "selected-url" : ""}`}
          aria-current={isCurrentPage ? "page" : undefined}
       >
          {label}

@@ -4,31 +4,33 @@
 :root {
    /* Cream primary foreground */
    --background: oklch(0.97 0.02 70);
-   --light: oklch(85.318% 0.00808 73.535);
+   --light: oklch(97.508% 0.01061 76.456);
    --typography: oklch(0.45 0.04 70);
    --primary: oklch(0.56 0.16 40);
 
    --secondary: oklch(0.97 0.02 70); /* Cream also*/
    --tercary: oklch(0.25 0.04 70); /* H1 and big titles*/
    /* Light sage secondary */
-   --hero-light: oklch(0.72 0.08 140);
+
    --card: oklch(98% 0.01 62.262);
    /* Warm accent */
-   --accent: oklch(45.463% 0.04005 70.841);
-
+   --hero: #f1dbce;
+   --hero-alt: #9a6f56;
    --alert: oklch(0.577 0.245 27.325);
 }
 
 [data-theme="dark"] {
    --background: oklch(17.051% 0.02964 115.422);
-   --light: hsl(32, 83%, 95%);
-   --typography: oklch(0.45 0.04 70);
+   --light: hsl(33, 26%, 83%);
+   --typography: oklch(0.97 0.02 70);
    --primary: oklch(0.56 0.16 40);
    --secondary: oklch(0.94 0.02 70);
-   --tercary: oklch(0.25 0.04 70);
+   --tercary: oklch(81.16% 0.02815 72.695);
    --hero-light: oklch(0.72 0.08 140);
-   --card: oklch(98% 0.01 62.262);
+   --card: oklch(17.051% 0.02964 115.422);
    --alert: oklch(0.577 0.245 27.325);
+   --hero: oklch(24.871% 0.04681 116.535);
+   --hero-alt: #9a6f56;
 }
 
 @theme inline {
@@ -41,9 +43,16 @@
    --color-alert: var(--alert);
    --color-card: var(--card);
    --color-typography: var(--typography);
+   --color-hero: var(--hero);
+   --color-hero-alt-: var(--hero-alt);
    --font-sans:
       var(--font-luciole), var(--font-lexend), ui-sans-serif, system-ui,
       sans-serif;
+}
+
+@theme {
+   --breakpoint-xs: 530px;
+   --breakpoint-mdPlus: 850px;
 }
 
 body {
@@ -65,6 +74,8 @@ body {
    /* Warm accent */
    --accent: oklch(45.463% 0.04005 70.841);
    --alert: oklch(0.577 0.245 27.325);
+   --hero: #141414;
+   --hero-alt: #000000;
 }
 
 [data-theme="yellowOnBlue"] {
@@ -78,6 +89,8 @@ body {
    --alert: #ffff00;
    --hero-light: oklch(0.72 0.08 140);
    --card: #000080;
+   --hero: #000080;
+   --hero-alt: #000080;
    /* Warm accent */
    --accent: oklch(45.463% 0.04005 70.841);
 
@@ -92,7 +105,9 @@ body {
    --light: #ffffff;
    --alert: #040404;
    --hero-light: oklch(0.72 0.08 140);
-   --card: rgb(6, 6, 6) (98% 0.01 62.262);
+   --card: #ffffff;
+   --hero: #fdfdfd;
+   --hero-alt: #ffffff;
    /* Warm accent */
    --accent: oklch(45.463% 0.04005 70.841);
 
@@ -103,14 +118,6 @@ body {
    --font-sans:
       var(--font-openDyslexic), var(--font-lexend), ui-sans-serif, system-ui,
       sans-serif;
-}
-
-.navLink {
-   font-size: large;
-
-   &:hover {
-      font-weight: bold;
-   }
 }
 
 .logo-naming {
