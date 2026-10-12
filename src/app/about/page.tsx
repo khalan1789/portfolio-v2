@@ -73,15 +73,15 @@ export default function About() {
                </div>
                <aside className=" mt-10 sm:flex sm:justify-around mdPlus:flex-col mdPlus:min-w-[270px] mdPlus:justify-start lg:w-[390px]">
                   <div className="rounded bg-card border border-primary p-5 text-center sm:w-[45%] mdPlus:w-full mdPlus:text-start">
-                     <h4 className="mt-5">Spécialisation</h4>
+                     <h3 className="mt-5">Spécialisation</h3>
                      <p className="mt-1 font-bold">Web full-stack</p>
-                     <h4 className="mt-5">Sensibilité</h4>
+                     <h3 className="mt-5">Sensibilité</h3>
                      <p className="mt-1 font-bold">Produit & utilisateurs</p>
-                     <h4 className="mt-5">Mode de travail</h4>
+                     <h3 className="mt-5">Mode de travail</h3>
                      <p className="mt-1 font-bold">
                         Full remote - Ouvert à de l&apos;hybride
                      </p>
-                     <h4 className="mt-5">Localisation</h4>
+                     <h3 className="mt-5">Localisation</h3>
                      <p className="mt-1 font-bold">Dax / Landes</p>
                   </div>
                   <div className="bg-hero rounded border border-primary mt-10 min-h-50 p-5 flex flex-col justify-around items-center sm:w-[45%] sm:mt-0 mdPlus:mt-5 mdPlus:w-full lg:mt-10">
@@ -93,7 +93,7 @@ export default function About() {
                      <p className="w-full mt-2 mb-5 mdPlus:text-start mdPlus:mt-5 mdPlus:mb-10 lg:mt-8 lg:mb-14">
                         {locale?.locale === "en"
                            ? "Interested in working together or just want to chat? I'd love to hear from you."
-                           : "Intéressé pour collaborer ensemble, ou simple envie d'en discuter ? Je serais râvi d'échanger"}
+                           : "Intéressé pour collaborer ensemble, ou simple envie d'en discuter ? Je serais râvi d'échanger."}
                      </p>
                      <CustomLink
                         type="base"
