@@ -5,7 +5,7 @@ import { useLocale } from "@/context/useLocale";
 import { useEffect } from "react";
 import profileImg from "../../public/images/profil_side_croped.png";
 import Image from "next/image";
-import CustomButton from "./components/button/custom-button";
+import CustomLink from "./components/button/custom-link";
 import CustomSpan from "./components/text/custom-span";
 import Card from "./components/card/card";
 import useFont from "@/context/useFont";
@@ -57,7 +57,11 @@ export default function Home() {
                      change vraiment.
                   </p>
                   <div className="flex justify-center">
-                     <CustomButton label="Voir mon expérience" type="base" />
+                     <CustomLink
+                        label="Voir mon expérience"
+                        type="base"
+                        url="/experience"
+                     />
                   </div>
                </div>
             </div>

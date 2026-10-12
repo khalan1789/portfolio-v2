@@ -10,10 +10,8 @@
 
    --secondary: oklch(0.97 0.02 70); /* Cream also*/
    --tercary: oklch(0.25 0.04 70); /* H1 and big titles*/
-   /* Light sage secondary */
-
    --card: oklch(98% 0.01 62.262);
-   /* Warm accent */
+   --card-secondary: hsl(23, 72%, 90%);
    --hero: #f1dbce;
    --hero-alt: #9a6f56;
    --alert: oklch(0.577 0.245 27.325);
@@ -28,6 +26,7 @@
    --tercary: oklch(81.16% 0.02815 72.695);
    --hero-light: oklch(0.72 0.08 140);
    --card: oklch(17.051% 0.02964 115.422);
+   --card-secondary: #3c1a06;
    --alert: oklch(0.577 0.245 27.325);
    --hero: oklch(24.871% 0.04681 116.535);
    --hero-alt: #9a6f56;
@@ -42,6 +41,7 @@
    --color-tercary: var(--tercary);
    --color-alert: var(--alert);
    --color-card: var(--card);
+   --color-card-secondary: var(--card-secondary);
    --color-typography: var(--typography);
    --color-hero: var(--hero);
    --color-hero-alt-: var(--hero-alt);
@@ -51,8 +51,8 @@
 }
 
 @theme {
-   --breakpoint-xs: 530px;
-   --breakpoint-mdPlus: 850px;
+   --breakpoint-xs: 33.125rem;
+   --breakpoint-mdPlus: 53.125rem;
 }
 
 body {
@@ -71,6 +71,7 @@ body {
    --alert: #ffffff;
    --hero-light: oklch(0.72 0.08 140);
    --card: #000000;
+   --card-secondary: #000000;
    /* Warm accent */
    --accent: oklch(45.463% 0.04005 70.841);
    --alert: oklch(0.577 0.245 27.325);
@@ -89,6 +90,7 @@ body {
    --alert: #ffff00;
    --hero-light: oklch(0.72 0.08 140);
    --card: #000080;
+   --card-secondary: #000080;
    --hero: #000080;
    --hero-alt: #000080;
    /* Warm accent */
@@ -106,6 +108,7 @@ body {
    --alert: #040404;
    --hero-light: oklch(0.72 0.08 140);
    --card: #ffffff;
+   --card-secondary: #ffffff;
    --hero: #fdfdfd;
    --hero-alt: #ffffff;
    /* Warm accent */
