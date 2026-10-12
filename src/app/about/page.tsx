@@ -1,21 +1,28 @@
 "use client";
 import { useLocale } from "@/context/useLocale";
-import React from "react";
 import CustomSpan from "../components/text/custom-span";
 import CustomLi from "../components/text/custom-li";
 import CustomLink from "../components/button/custom-link";
+import PageTitle from "../components/text/page-title";
 
 export default function About() {
    const locale = useLocale();
    return (
       <main className="p-2 mdPlus:pl-5 mdPlus:pr-5 lg:pl-[5%] lg:pr-[5%] xl:pl-[15%] xl:pr-[15%]">
          <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl mt-10 text-center font-bold mdPlus:text-start md:text-[2.5rem]">
+            <PageTitle
+               baseTextEn="About "
+               coloredTextEn="me"
+               baseTextFr="À propos "
+               coloredTextFr="de moi"
+               onStart
+            />
+            {/* <h1 className="text-3xl mt-10 text-center font-bold mdPlus:text-start md:text-[2.5rem]">
                {locale?.locale === "en" ? "About " : "À propos "}
                <CustomSpan
                   label={locale?.locale === "en" ? "me " : " de moi "}
                />
-            </h1>
+            </h1> */}
             <p className="mt-8 text-2xl mdPlus:mt-4">
                {locale?.locale === "en"
                   ? "My journey as a developer and what drives me "

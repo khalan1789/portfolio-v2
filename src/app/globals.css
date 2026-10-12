@@ -14,6 +14,7 @@
    --card-secondary: hsl(23, 72%, 90%);
    --hero: #f1dbce;
    --hero-alt: #9a6f56;
+   --checked: rgb(35, 145, 35);
    --alert: oklch(0.577 0.245 27.325);
 }
 
@@ -25,11 +26,12 @@
    --secondary: oklch(0.94 0.02 70);
    --tercary: oklch(81.16% 0.02815 72.695);
    --hero-light: oklch(0.72 0.08 140);
-   --card: oklch(17.051% 0.02964 115.422);
+   --card: hsl(0, 0%, 0%);
    --card-secondary: #3c1a06;
    --alert: oklch(0.577 0.245 27.325);
    --hero: oklch(24.871% 0.04681 116.535);
    --hero-alt: #9a6f56;
+   --checked: rgb(6, 154, 6);
 }
 
 @theme inline {
@@ -45,6 +47,7 @@
    --color-typography: var(--typography);
    --color-hero: var(--hero);
    --color-hero-alt-: var(--hero-alt);
+   --color-checked: var(--checked);
    --font-sans:
       var(--font-luciole), var(--font-lexend), ui-sans-serif, system-ui,
       sans-serif;
@@ -77,6 +80,7 @@ body {
    --alert: oklch(0.577 0.245 27.325);
    --hero: #141414;
    --hero-alt: #000000;
+   --checked: #ffffff;
 }
 
 [data-theme="yellowOnBlue"] {
@@ -97,6 +101,7 @@ body {
    --accent: oklch(45.463% 0.04005 70.841);
 
    --alert: oklch(0.577 0.245 27.325);
+   --checked: #ffff00;
 }
 [data-theme="whiteAndBlack"] {
    --primary: rgb(6, 6, 6);
@@ -115,6 +120,7 @@ body {
    --accent: oklch(45.463% 0.04005 70.841);
 
    --alert: oklch(0.577 0.245 27.325);
+   --checked: #000000;
 }
 
 [data-font="dyslexic"] {
