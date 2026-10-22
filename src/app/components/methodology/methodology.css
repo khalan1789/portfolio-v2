@@ -1,0 +1,68 @@
+.methodo-section-container {
+   clip-path: polygon(0 3.2%, 100% 0, 100% 100%, 0 96.8%);
+   background-color: var(--card-secondary);
+   width: 100%;
+   margin-top: -1px;
+   margin: auto 0;
+   min-height: 300px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @media all and (min-width: 900px) {
+      justify-content: center;
+      align-items: center;
+   }
+}
+.methodo-container {
+   max-width: 1000px;
+   padding: 4px;
+   margin-top: 50px;
+
+   @media all and (min-width: 900px) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+   }
+}
+
+.steps-container {
+   display: flex;
+   flex-direction: column;
+   margin-top: 40px;
+   justify-content: center;
+   @media all and (min-width: 900px) {
+      flex-direction: row;
+   }
+}
+h4 {
+   font-weight: bold;
+   margin-top: 10px;
+   @media all and (min-width: 900px) {
+   }
+}
+
+.step-paragraph {
+   margin-top: 10px;
+   padding-right: 4px;
+   font-size: 14px;
+   @media all and (min-width: 900px) {
+      margin-top: 20px;
+      padding-right: 4px;
+      font-size: 14px;
+   }
+}
+
+.step-description-container {
+   padding-right: 8px;
+   @media all and (min-width: 900px) {
+   }
+}
+
+.step-block {
+   width: auto;
+   display: flex;
+   height: 100px;
+   @media all and (min-width: 900px) {
+      display: block;
+      width: 200px;
+   }
+}
