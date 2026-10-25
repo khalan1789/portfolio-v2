@@ -1,0 +1,77 @@
+.methodo-section-container {
+   clip-path: polygon(0 3.2%, 100% 0, 100% 100%, 0 96.8%);
+   background-color: var(--card-secondary);
+   width: 100%;
+   min-height: 300px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @media all and (min-width: 1024px) {
+      min-height: 500px;
+      justify-content: start;
+   }
+   @media all and (min-width: 1200px) {
+      justify-content: center;
+   }
+}
+.methodo-container {
+   padding: 15px 6px;
+   margin-top: 80px;
+   margin-bottom: 80px;
+   display: flex;
+   flex-direction: column;
+
+   @media all and (min-width: 1024px) {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      min-height: 350px;
+      width: 100%;
+      padding: 16px;
+   }
+   @media all and (min-width: 1200px) {
+      width: 1200px;
+   }
+}
+
+.steps-container {
+   display: flex;
+   flex-direction: column;
+   margin-top: 40px;
+   justify-content: center;
+   @media all and (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: stretch;
+   }
+}
+h3 {
+   font-weight: bold;
+   margin-top: 10px;
+   @media all and (min-width: 1024px) {
+      font-size: large;
+   }
+}
+
+.step-paragraph {
+   margin-top: 10px;
+   padding-right: 4px;
+   font-size: 14px;
+   @media all and (min-width: 1024px) {
+      margin-top: 20px;
+      padding-right: 4px;
+      font-size: 16px;
+   }
+}
+
+.step-description-container {
+   padding-right: 8px;
+}
+
+.step-block {
+   width: auto;
+   display: flex;
+   height: 120px;
+   @media all and (min-width: 1024px) {
+      display: block;
+      width: 240px;
+   }
+}

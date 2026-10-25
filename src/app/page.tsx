@@ -9,6 +9,7 @@ import CustomLink from "./components/button/custom-link";
 import CustomSpan from "./components/text/custom-span";
 import Card from "./components/card/card";
 import useFont from "@/context/useFont";
+import Methodology from "./components/methodology/methodology";
 
 export default function Home() {
    const locale = useLocale();
@@ -121,6 +122,7 @@ export default function Home() {
                />
             </div>
          </div>
+         <Methodology />
       </main>
    );
 }

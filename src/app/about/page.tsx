@@ -1,6 +1,5 @@
 "use client";
 import { useLocale } from "@/context/useLocale";
-import CustomSpan from "../components/text/custom-span";
 import CustomLi from "../components/text/custom-li";
 import CustomLink from "../components/button/custom-link";
 import PageTitle from "../components/text/page-title";
@@ -17,12 +16,6 @@ export default function About() {
                coloredTextFr="de moi"
                onStart
             />
-            {/* <h1 className="text-3xl mt-10 text-center font-bold mdPlus:text-start md:text-[2.5rem]">
-               {locale?.locale === "en" ? "About " : "À propos "}
-               <CustomSpan
-                  label={locale?.locale === "en" ? "me " : " de moi "}
-               />
-            </h1> */}
             <p className="mt-8 text-2xl mdPlus:mt-4">
                {locale?.locale === "en"
                   ? "My journey as a developer and what drives me "

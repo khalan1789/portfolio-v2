@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../logo/logo";
 import { grandHotel } from "@/app/styles/styles";
 
