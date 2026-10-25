@@ -1,5 +1,6 @@
-import Step from "../step/step";
+"use client";
 import "./methodology.css";
+import Step from "../step/step";
 import { useLocale } from "@/context/useLocale";
 
 export default function Methodology() {
@@ -17,46 +18,59 @@ export default function Methodology() {
                <div className="step-block">
                   <Step stepNumber={1} />
                   <div className="step-description-container">
-                     <h4>Échanger</h4>
+                     <h3>{locale?.locale === "en" ? "Engage" : "Échanger"}</h3>
                      <p className="step-paragraph">
-                        Cerner le besoin avec les personnes concernées.
+                        {locale?.locale === "en"
+                           ? "Pinpoint the need together with the people involved."
+                           : "Cerner le besoin avec les personnes concernées."}
                      </p>
                   </div>
                </div>
                <div className="step-block">
                   <Step stepNumber={2} />
                   <div className="step-description-container">
-                     <h4>Comprendre</h4>
+                     <h3>
+                        {locale?.locale === "en" ? "Understand" : "Comprendre"}
+                     </h3>
                      <p className="step-paragraph">
-                        Identifier les contraintes métier et les cas limites.
+                        {locale?.locale === "en"
+                           ? "Identify the business constraints and edge cases."
+                           : "Identifier les contraintes métier et les cas limites."}
                      </p>
                   </div>
                </div>
                <div className="step-block">
                   <Step stepNumber={3} />
                   <div className="step-description-container">
-                     <h4>Concevoir</h4>
+                     <h3>
+                        {locale?.locale === "en" ? "Architect" : "Concevoir"}
+                     </h3>
                      <p className="step-paragraph">
-                        Poser une architecture et des parcours simples à faire
-                        évoluer.
+                        {locale?.locale === "en"
+                           ? "Lay down an architecture and simple user journeys that are easy to evolve."
+                           : "Poser une architecture et des parcours simples à faire évoluer."}
                      </p>
                   </div>
                </div>
                <div className="step-block">
                   <Step stepNumber={4} />
                   <div className="step-description-container">
-                     <h4>Construire</h4>
+                     <h3>{locale?.locale === "en" ? "Build" : "Construire"}</h3>
                      <p className="step-paragraph">
-                        Développer proprement, avec des retours réguliers.
+                        {locale?.locale === "en"
+                           ? "Write clean code, with regular feedback along the way."
+                           : "Développer proprement, avec des retours réguliers."}
                      </p>
                   </div>
                </div>
                <div className="step-block">
                   <Step stepNumber={5} />
                   <div className="step-description-container">
-                     <h4>Livrer</h4>
+                     <h3>{locale?.locale === "en" ? "Ship" : "Livrer"}</h3>
                      <p className="step-paragraph">
-                        Mesurer l&apos;usage réel et ajuster.
+                        {locale?.locale === "en"
+                           ? "Measure real-world usage and adjust."
+                           : " Mesurer l'usage réel et ajuster."}
                      </p>
                   </div>
                </div>

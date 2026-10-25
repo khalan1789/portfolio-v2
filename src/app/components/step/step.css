@@ -4,7 +4,7 @@
    width: 80px;
    height: calc(100% - 40px);
    justify-content: center;
-   @media all and (min-width: 900px) {
+   @media all and (min-width: 1024px) {
       width: calc(100% - 40px);
       height: auto;
       justify-content: start;
