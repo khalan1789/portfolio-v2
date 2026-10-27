@@ -7,8 +7,8 @@ import PageTitle from "../components/text/page-title";
 export default function About() {
    const locale = useLocale();
    return (
-      <main className="p-2 mdPlus:pl-5 mdPlus:pr-5 lg:pl-[5%] lg:pr-[5%] xl:pl-[15%] xl:pr-[15%]">
-         <div className="max-w-4xl mx-auto">
+      <main className="p-2 mdPlus:pl-5 mdPlus:pr-5 lg:mx-auto ">
+         <div className="lg:max-w-5xl lg:mx-auto ">
             <PageTitle
                baseTextEn="About "
                coloredTextEn="me"
@@ -28,7 +28,7 @@ export default function About() {
                         ? "My story"
                         : "D'un métier de contact..."}
                   </h2>
-                  <p className="mt-5">
+                  <p className="mt-5 text-lg">
                      {locale?.locale === "en"
                         ? " "
                         : "Avant de coder ma première ligne, j’ai passé plus de treize ans dans la téléphonie mobile, et sans le savoir, j’y ai fait à la fois du front et du back. "}
