@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Url } from "@/types/types";
+import { AppUrl } from "@/types/types";
 type Props = {
    label: string;
    size?: string;
    type: "base" | "reverse";
-   url: Url;
+   url: AppUrl;
 };
 
 export default function CustomLink({ label, size, type, url }: Props) {

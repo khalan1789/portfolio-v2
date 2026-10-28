@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import { Url } from "@/types/types";
+import { AppUrl } from "@/types/types";
 type Props = {
-   href: Url;
+   href: AppUrl;
    label: string;
    selectedUrl: string;
 };
