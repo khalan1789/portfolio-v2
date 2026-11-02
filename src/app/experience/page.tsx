@@ -62,7 +62,7 @@ export default function Experience() {
                />
                <JobCard
                   company="Mission freelance - Accessibilité et UX"
-                  description="Remplacement d'un site vieillissant par un site plus moderne et accessible à tous, de l’analyse du besoin à la mise en ligne."
+                  description="Remplacement d'un site vieillissant par un site plus moderne et accessible à tous, de l’analyse du besoin à la conception."
                   jobDuration="2023"
                   job="Développeur full-stack "
                   jobLink="/experience/website-redesign"
@@ -99,7 +99,7 @@ export default function Experience() {
             </div>
             <section className="mt-15 border-t pt-5">
                <h2 className="text-2xl">Formation</h2>
-               <div className="flex flex-col lg:flex-row lg:justify-between">
+               <div className="flex flex-col mt-8 lg:flex-row lg:justify-between">
                   <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] ">
                      <h3 className="text-primary text-lg">
                         Développeur web - Openclassrooms{" "}

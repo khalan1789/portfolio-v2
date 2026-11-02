@@ -1,7 +1,7 @@
 "use client";
 import { useLocale } from "@/context/useLocale";
 import CustomLi from "../components/text/custom-li";
-import CustomLink from "../components/button/custom-link";
+import CustomButtonLink from "../components/button/custom-button-link";
 import PageTitle from "../components/text/page-title";
 
 export default function About() {
@@ -95,7 +95,7 @@ export default function About() {
                            ? "Interested in working together or just want to chat? I'd love to hear from you."
                            : "Intéressé pour collaborer ensemble, ou simple envie d'en discuter ? Je serais râvi d'échanger."}
                      </p>
-                     <CustomLink
+                     <CustomButtonLink
                         type="base"
                         label={
                            locale?.locale === "en"

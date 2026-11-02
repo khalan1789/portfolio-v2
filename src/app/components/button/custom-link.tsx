@@ -1,26 +1,20 @@
-import Link from "next/link";
 import { AppUrl } from "@/types/types";
+import Link from "next/link";
+
 type Props = {
-   label: string;
-   size?: string;
-   type: "base" | "reverse";
-   url: AppUrl;
+   ariaLabel: string;
+   href: AppUrl | string;
+   description: string;
 };
 
-export default function CustomLink({ label, size, type, url }: Props) {
-   return type === "base" ? (
+export default function CustomLink({ ariaLabel, href, description }: Props) {
+   return (
       <Link
-         className="bg-primary text-light font-bold border border-primary rounded p-1 w-[220px] h-10 cursor-pointer flex justify-center align-center hover:shadow-xl"
-         href={url}
+         aria-label={ariaLabel}
+         href={href}
+         className="text-primary mt-5 hover:font-bold"
       >
-         {label}
-      </Link>
-   ) : (
-      <Link
-         className="border-primary text-primary rounded p-3 w-[220px] h-10 text-primary"
-         href={url}
-      >
-         {label}
+         {description}
       </Link>
    );
 }

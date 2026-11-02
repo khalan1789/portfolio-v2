@@ -85,7 +85,7 @@ body {
 
 [data-theme="yellowOnBlue"] {
    --primary: #ffff00;
-   --secondary: #000080;
+   --secondary: #ffff00;
    --tercary: #ffff00;
    --background: #000080;
    --typography: #ffff00;
@@ -137,7 +137,8 @@ body {
    color: var(--primary);
 }
 
-p {
+p,
+.classic-li {
    font-size: 16px;
    @media all and (min-width: 900px) {
       font-size: large;
