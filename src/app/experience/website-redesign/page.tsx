@@ -9,9 +9,9 @@ export default function WebsiteRedesign() {
    return (
       <main className="lg:max-w-5xl lg:mx-auto p-2">
          <ExperienceHeader
-            job="Développeur full stack"
+            job="Développeur Full Stack"
             company=" Mission client freelance"
-            duration="Mai 2023 - Novembre 2023"
+            duration="Mai - Novembre 2023"
             isEn={false}
          />
          <div className="mt-14 flex flex-col lg:flex-row lg: mb-20">

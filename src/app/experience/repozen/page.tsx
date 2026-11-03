@@ -1,5 +1,7 @@
-import React from "react";
+import RepozenContent from "./content";
 
 export default function Repozen() {
-   return <div>Repozen page</div>;
+   <main className="lg:max-w-5xl lg:mx-auto p-2">
+      <RepozenContent />
+   </main>;
 }
