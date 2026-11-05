@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 type Props = {
    type: "primary" | "secondary";
-   description: string;
+   description: string | ReactNode;
 };
 
 export default function CustomLi({ type, description }: Props) {

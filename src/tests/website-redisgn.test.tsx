@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
 import { describe, expect, it } from "vitest";
-import WebsiteRedesign from "@/app/experience/website-redesign/page";
+import WebsiteRedesign from "@/app/experience/website-redesign/pagination";
 
 describe("about page", () => {
    it("should have no accessibility violations when closed", async () => {

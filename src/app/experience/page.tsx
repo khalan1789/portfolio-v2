@@ -83,7 +83,7 @@ export default function Experience() {
                   description="Au sein d'une équipe de quatre développeurs, conception de la partie Front-End d'une application de gestion bancaire."
                   jobDuration="2022"
                   job="Développeur front-end"
-                  jobLink="/experience/beSwarm"
+                  jobLink="/experience/beswarm"
                   impacts={beSwarmIpacts}
                   isEn={isEn}
                />
