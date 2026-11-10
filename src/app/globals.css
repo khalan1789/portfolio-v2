@@ -138,7 +138,8 @@ body {
 }
 
 p,
-.classic-li {
+.classic-li,
+.experience-subtitle {
    font-size: 16px;
    @media all and (min-width: 900px) {
       font-size: large;

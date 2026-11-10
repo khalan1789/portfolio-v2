@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CustomLink from "../button/custom-link";
+import CustomAppNavLink from "../button/custom-app-nav-link";
 import BubbleText from "../text/bubble-text";
 
 type Props = {
@@ -39,14 +39,15 @@ export default function JobCard({
                })}
             </p>
          )}
-         <CustomLink
+         <CustomAppNavLink
             href={jobLink}
             ariaLabel={
                isEn
                   ? `Link to the page ${company}'s experience `
                   : `Lien viens la page expérience ${company}`
             }
-            description={isEn ? "Show more →" : "Voir le détail →"}
+            description={isEn ? "Show more" : "Voir le détail"}
+            direction="forward"
          />
       </div>
    );

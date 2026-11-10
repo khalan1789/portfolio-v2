@@ -51,7 +51,36 @@ export type Section = {
 export type Step = {
    title?: Localized;
    period?: Localized;
-   context?: LocalizedContent;
+   situation?: LocalizedContent;
    sections?: Section[];
    results?: LocalizedContent[];
+   metrics?: MetricSection;
 };
+
+export type SectionLabels = {
+   context: string;
+   whatIDid: string;
+   results: string;
+   takeaway: string;
+   keyImpacts: string;
+   technologies: string;
+   tools: string;
+   situation: string;
+};
+
+export type MetricSection = {
+   title?: Localized;
+   description?: LocalizedContent;
+   table?: TableContent;
+   tableSource?: LocalizedContent;
+   info?: LocalizedContent;
+   citation?: LocalizedContent;
+};
+type Row = Localized[];
+
+export type TableContent = {
+   rows: Row[];
+   headings: Localized[];
+};
+
+export type Directions = "back" | "forward";

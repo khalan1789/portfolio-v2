@@ -1,4 +1,4 @@
-import CustomLink from "../button/custom-link";
+import CustomAppNavLink from "../button/custom-app-nav-link";
 
 type Props = {
    job: string;
@@ -16,18 +16,19 @@ export default function ExperienceHeader({
    return (
       <>
          <div className="mt-18 mb-10">
-            <CustomLink
+            <CustomAppNavLink
                description={
                   isEn
-                     ? "← Back to Experience"
-                     : "← Retour vers la page Expériences"
+                     ? "Back to Experiences"
+                     : "Retour vers la page Expériences"
                }
                ariaLabel={
                   isEn
-                     ? "link to back on experience page"
-                     : "lien pour revenir sur la page expérience"
+                     ? "link to back on experiences' page"
+                     : "lien de retour vers la page Expériences"
                }
                href="/experience"
+               direction="back"
             />
          </div>
 
