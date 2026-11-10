@@ -1,4 +1,3 @@
-import Link from "next/link";
 import CustomAppNavLink from "../button/custom-app-nav-link";
 import BubbleText from "../text/bubble-text";
 

@@ -7,8 +7,8 @@ export const WebsiteRedesign: Experience = {
       fr: "Mission freelance - Accessibilité et UX",
    },
    role: {
-      fr: "Développeur full stack",
-      en: "Full Stack Developer",
+      fr: "Développeur Full-Stack",
+      en: "Full-Stack Developer",
    },
    period: { en: "May - November 2023", fr: "Mai - novembre 2023" },
    context: {

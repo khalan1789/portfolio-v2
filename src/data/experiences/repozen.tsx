@@ -5,25 +5,25 @@ export const Repozen: Experience = {
    slug: "repozen",
    company: { en: "Repozen", fr: "Repozen" },
    role: {
-      fr: "Développeur Front End, puis Développeur Full Stack",
-      en: "Front-End Developer, then Full Stack Developer",
+      fr: "Développeur Front-End, puis Développeur Full-Stack",
+      en: "Front-End Developer, then Full-Stack Developer",
    },
    period: {
       en: "May - September 2023 • Volunteer work",
       fr: "Mai - septembre 2023 • Bénévolat",
    },
    context: {
-      en: `Repozen wants everyone to be able to take care of their mental health with peace of mind. Its platform connects the general public with organizations in the social sector. The nonprofit ran like a company: front-end, back-end and full stack developers, a UX/UI team, an SEO team, two DevOps engineers, a communications team, all led by a CTO. It was my first experience in a multidisciplinary team of this size. I joined first as a front-end developer, before moving to full stack.`,
+      en: `Repozen wants everyone to be able to take care of their mental health with peace of mind. Its platform connects the general public with organizations in the social sector. The nonprofit ran like a company: front-end, back-end and full-stack developers, a UX/UI team, an SEO team, two DevOps engineers, a communications team, all led by a CTO. It was my first experience in a multidisciplinary team of this size. I joined first as a front-end developer, before moving to full stack.`,
       fr: `Repozen veut que chacun puisse prendre soin de sa santé
                   mentale sereinement. Sa plateforme met en relation le grand
                   public et les associations du secteur social.
                   L'association fonctionnait comme une entreprise :
-                  développeurs front, back et full stack, équipe UX/UI, équipe
+                  développeurs front, back et full-stack, équipe UX/UI, équipe
                   SEO, deux DevOps, équipe communication, le tout piloté par un
                   CTO. C'était ma première expérience dans une équipe
                   pluridisciplinaire de cette taille. Je l'ai rejointe
                   d'abord en tant que développeur front end, avant de
-                  passer full stack.`,
+                  passer full-stack.`,
    },
    steps: [
       {
@@ -62,7 +62,7 @@ export const Repozen: Experience = {
                items: [
                   {
                      en: `Moved to full stack to help build the organization's blog, in Next.js and TypeScript, following the architecture defined by the team.`,
-                     fr: `Passage en full stack pour participer à la création du blog
+                     fr: `Passage en full-stack pour participer à la création du blog
                      de l'association, en Next.js et TypeScript, selon
                      l'architecture définie par l'équipe.`,
                   },
@@ -125,7 +125,7 @@ export const Repozen: Experience = {
                         repozen
                      </ExternalLink>{" "}
                      tourne en production depuis. Mon périmètre s&apos;est
-                     élargi du front au full stack en quelques mois. Surtout,
+                     élargi du front au full-stack en quelques mois. Surtout,
                      j&apos;ai appris à travailler avec des métiers qui ne sont
                      pas le mien, ce qui me servira par la suite, notamment dès
                      mon arrivée chez Villyz.
@@ -138,7 +138,7 @@ export const Repozen: Experience = {
    impacts: [
       {
          en: "From front end to full stack",
-         fr: "Du front au full stack",
+         fr: "Du front au full-stack",
       },
       {
          en: "Multidisciplinary team",

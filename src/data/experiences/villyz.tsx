@@ -6,8 +6,8 @@ export const Villyz: Experience = {
    slug: "villyz",
    company: { en: "Villyz", fr: "Villyz" },
    role: {
-      fr: "Développeur Full Stack, puis Référent Technique Produit",
-      en: "Full Stack Developer, then Product Technical Lead",
+      fr: "Développeur Full-Stack, puis Référent Technique Produit",
+      en: "Full-Stack Developer, then Product Technical Lead",
    },
    period: {
       en: "December 2023 - April 2026",
@@ -57,12 +57,12 @@ export const Villyz: Experience = {
    steps: [
       {
          title: {
-            en: "Step 1 - Full Stack Developer",
-            fr: "Étape 1 - Développeur Full Stack",
+            en: "Step 1 - Full-Stack Developer",
+            fr: "Étape 1 - Développeur Full-Stack",
          },
          situation: {
-            en: `I was hired as a full stack developer with a stronger front-end profile. The goal: take the front-end load off the CTO by bringing experience on the interface side. The back end was in C# and .NET, which I didn't know yet.`,
-            fr: `Je suis recruté comme développeur full stack, avec un profil plus poussé sur le front-end. L'objectif : soulager le CTO sur cette partie en apportant de l'expérience côté interface. Le back-end est en C# et .NET, que je ne connais pas encore.`,
+            en: `I was hired as a full-stack developer with a stronger front-end profile. The goal: take the front-end load off the CTO by bringing experience on the interface side. The back end was in C# and .NET, which I didn't know yet.`,
+            fr: `Je suis recruté comme développeur full-stack, avec un profil plus poussé sur le front-end. L'objectif : soulager le CTO sur cette partie en apportant de l'expérience côté interface. Le back-end est en C# et .NET, que je ne connais pas encore.`,
          },
          period: {
             en: "December 2023 - September 2025",
@@ -348,8 +348,8 @@ export const Villyz: Experience = {
                fr: `Le réinvestissement devient un levier de fidélisation des investisseurs.`,
             },
             {
-               en: `Hired for my initially stronger front-end skills, I quickly became an autonomous full stack developer, trusted with designing key features, financial flows and staging deployments.`,
-               fr: `Recruté pour mes compétences initialement plus poussées sur le front, je deviens vite un développeur full stack autonome, à qui l'on confie la conception de fonctionnalités clés, les flux financiers et les déploiements en recette.`,
+               en: `Hired for my initially stronger front-end skills, I quickly became an autonomous full-stack developer, trusted with designing key features, financial flows and staging deployments.`,
+               fr: `Recruté pour mes compétences initialement plus poussées sur le front, je deviens vite un développeur full-stack autonome, à qui l'on confie la conception de fonctionnalités clés, les flux financiers et les déploiements en recette.`,
             },
             {
                en: `Non-technical teams became more autonomous: several actions on the platform no longer require a developer.`,

@@ -5,8 +5,8 @@ export const ModuloTech: Experience = {
    slug: "modulo-tech",
    company: { en: "Modulo Tech", fr: "Modulo Tech" },
    role: {
-      fr: "Développeur Full Stack",
-      en: "Full Stack Developer",
+      fr: "Développeur Full-Stack",
+      en: "Full-Stack Developer",
    },
    period: { en: "April - May 2022", fr: "Avril - mai 2022" },
    context: {
@@ -68,7 +68,7 @@ export const ModuloTech: Experience = {
             {
                en: (
                   <>
-                     A working full stack application, delivered solo, with the
+                     A working full-stack application, delivered solo, with the
                      code available on{" "}
                      <ExternalLink
                         href="https://github.com/khalan1789/Stackoverflou-project"
@@ -90,7 +90,7 @@ export const ModuloTech: Experience = {
                ),
                fr: (
                   <>
-                     Une application full stack fonctionnelle, livrée seul, avec
+                     Une application full-stack fonctionnelle, livrée seul, avec
                      un code consultable sur{" "}
                      <ExternalLink
                         href="https://github.com/khalan1789/Stackoverflou-project"
@@ -116,7 +116,7 @@ export const ModuloTech: Experience = {
    ],
    impacts: [
       {
-         en: "Solo front end + back end",
+         en: "Solo front-end + back-end",
          fr: "Front + back en solo",
       },
       {

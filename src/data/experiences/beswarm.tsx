@@ -4,7 +4,7 @@ export const BeSwarm: Experience = {
    slug: "beswarm",
    company: { en: "BeSwarm", fr: "BeSwarm" },
    role: {
-      fr: "Développeur Front End",
+      fr: "Développeur Front-End",
       en: "Front-End Developer",
    },
    period: { en: "May - November 2022", fr: "Mai - novembre 2022" },
