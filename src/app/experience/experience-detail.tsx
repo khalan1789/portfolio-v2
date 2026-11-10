@@ -25,6 +25,13 @@ export default function ExperienceDetail({ experience }: Props) {
       return <h3 className={style}>{contain}</h3>;
    };
 
+   const listHeader = (contain: string, style?: string) => {
+      if (experience.steps.length > 1) {
+         return <h5 className={`experience-subtitle ${style}`}>{contain}</h5>;
+      }
+      return <h4 className={style}>{contain}</h4>;
+   };
+
    const testimonyTitle = {
       en: "Testimony :",
       fr: "Témoignage :",
@@ -76,11 +83,11 @@ export default function ExperienceDetail({ experience }: Props) {
                         {step.sections?.map((section, index) => {
                            return (
                               <Fragment key={index}>
-                                 {section.title && (
-                                    <p className="font-bold mt-5 lg:mt-8">
-                                       {section.title[currentLocale]}
-                                    </p>
-                                 )}
+                                 {section.title &&
+                                    listHeader(
+                                       section.title[currentLocale],
+                                       "font-bold mt-5 lg:mt-8",
+                                    )}
                                  <ul className=" pl-5 classic-li mt-3 lg:mt-8">
                                     {section.items.map((item, index) => {
                                        return (
