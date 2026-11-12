@@ -43,7 +43,7 @@ export default function JobCard({
             ariaLabel={
                isEn
                   ? `Link to the page ${company}'s experience `
-                  : `Lien viens la page expérience ${company}`
+                  : `Lien vers la page expérience ${company}`
             }
             description={isEn ? "Show more" : "Voir le détail"}
             direction="forward"

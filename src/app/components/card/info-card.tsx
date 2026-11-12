@@ -2,6 +2,7 @@ type Props = React.PropsWithChildren<{
    bg: "card" | "secondary";
    title: string;
    hasBottomMargin?: boolean;
+   useAsLi?: boolean;
 }>;
 
 export default function InfoCard({
@@ -9,6 +10,7 @@ export default function InfoCard({
    children,
    hasBottomMargin,
    bg,
+   useAsLi,
 }: Props) {
    const returnBg = () => {
       return bg === "card"
@@ -25,23 +27,18 @@ export default function InfoCard({
            ? "border border-secondary text-tercary"
            : "border border-light";
    };
-   return (
+   return useAsLi ? (
+      <li
+         className={`rounded  p-5 text-center mdPlus:text-start lg:w-full ${hasBottomMargin && "mb-4 lg:mb-5"} ${returnBg()} ${returnBorder()}`}
+      >
+         <h3 className="mt-3 font-bold">{title}</h3>
+         {children}
+      </li>
+   ) : (
       <div
          className={`rounded  p-5 text-center mdPlus:text-start lg:w-full ${hasBottomMargin && "mb-4 lg:mb-5"} ${returnBg()} ${returnBorder()}`}
       >
          <h3 className="mt-3 font-bold">{title}</h3>
-         {/* <p className="flex flex-wrap mt-4">
-            {infos &&
-               infos.length > 0 &&
-               infos.map((info) => {
-                  return (
-                     <BubbleText
-                        key={infos.indexOf(info) + info.slice(0, 4)[0]}
-                        description={info}
-                     />
-                  );
-               })}
-         </p> */}
          {children}
       </div>
    );

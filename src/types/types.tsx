@@ -27,6 +27,7 @@ export type FontContextValue = {
 export type Localized = Record<Locale, string>;
 // Difference is that it could include links, it's not strict text
 export type LocalizedContent = Record<Locale, ReactNode>;
+export type LocalizedList = Record<Locale, string[]>;
 
 export type Experience = {
    slug: string;
@@ -84,3 +85,10 @@ export type TableContent = {
 };
 
 export type Directions = "back" | "forward";
+
+export interface ArenaStep {
+   rank: Localized;
+   category?: Localized;
+   skills?: LocalizedList;
+   badgeFight: number;
+}

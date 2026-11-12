@@ -7,13 +7,15 @@ import Experience from "@/app/experience/page";
 import userEvent from "@testing-library/user-event";
 
 describe("about page", () => {
+   const renderExp = () => render(<Experience />);
    it("should have no accessibility violations", async () => {
-      const { container } = render(<Experience />);
+      const { container } = renderExp();
       const results = await axe(container);
       expect(results).toHaveNoViolations();
    });
 
    it("should respect html titles order", () => {
+      renderExp();
       const headingLevels = screen
          .getAllByRole("heading")
          .map((heading) =>
@@ -29,12 +31,18 @@ describe("about page", () => {
       });
    });
 
-   it("Should have backlink without any symbol readed by accessibility tools", () => {
-      const backLink = screen.getByRole("link", { name: /retour|back/i });
-      expect(backLink).not.toHaveAccessibleName(/←/);
+   it("Should have forward link without any symbol readed by accessibility tools", () => {
+      renderExp();
+      const forwardLinks = screen.getAllByRole("link", {
+         name: /Lien vers |Link to/i,
+      });
+      forwardLinks.forEach((forwardLink) => {
+         expect(forwardLink).not.toHaveAccessibleName(/→/);
+      });
    });
 
    it("should reach every link with the keyboard in reading order", async () => {
+      renderExp();
       const user = userEvent.setup();
 
       for (const link of screen.queryAllByRole("link")) {

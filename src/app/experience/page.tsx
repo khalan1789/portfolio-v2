@@ -152,15 +152,19 @@ export default function Experience() {
                <div className="flex flex-col mt-8 lg:flex-row lg:justify-between">
                   <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%]">
                      <h3 className="text-primary text-lg">
-                        The Arena Project - Fondamentaux du génie logiciel{" "}
+                        {isEn
+                           ? "The Arena Project - Software Engineering Fundamentals"
+                           : "The Arena Project - Fondamentaux du génie logiciel"}{" "}
                         <i className="text-sm">2022-2023</i>
                      </h3>
 
                      <h4 className="lg:font-[16px] mt-4 mb-8 overflow-hidden">
-                        Inspiré de la méthodologie de l&apos;École 42,
+                        {isEn
+                           ? "Inspired by the École 42 methodology, learning the fundamentals of software engineering : recursive algorithms, iterativity, backtracking, number bases, Big O notation, binary trees, file systems..."
+                           : `Inspiré de la méthodologie de l&apos;École 42,
                         apprentissage des fondamentaux du génie logiciel :
                         algorithmie récursive, itérativité, backtracking, bases
-                        10, bigO, arbres binaires, file system...
+                        10, bigO, arbres binaires, file system...`}
                      </h4>
                      <CustomAppNavLink
                         description={isEn ? "Show more" : "Voir plus"}
@@ -171,14 +175,18 @@ export default function Experience() {
                   </div>
                   <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] ">
                      <h3 className="text-primary text-lg">
-                        Développeur web - Openclassrooms{" "}
+                        {isEn
+                           ? "Web Developer - Openclassrooms"
+                           : "Développeur web - Openclassrooms"}{" "}
                         <i className="text-sm">2021</i>
                      </h3>
 
-                     <h4 className="mt-4 lg:font-[16px] mb-10 lg:mt-10 lg:mb-15">
-                        Apprentissage de tous les aspect du métier (front, back,
-                        full stack, SEO), via un parcours de réalisation de
-                        projets validés par un jury de professionnels.
+                     <h4
+                        className={`mt-4 lg:font-[16px] mb-10 lg:mt-10 ${locale?.locale === "en" ? "lg:mb-10" : "lg:mb-15"}`}
+                     >
+                        {isEn
+                           ? "Learning all aspects of the profession (front-end, back-end, full-stack, SEO) through a program centered on completing projects, which are then evaluated by a jury of professionals."
+                           : "Apprentissage de tous les aspect du métier (front, back,full stack, SEO), via un parcours de réalisation de projets validés par un jury de professionnels."}
                      </h4>
                      <CustomAppNavLink
                         description={isEn ? "Show more" : "Voir plus"}

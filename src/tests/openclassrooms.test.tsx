@@ -53,24 +53,6 @@ describe.each(LOCALES)("Openclassrooms detailed page [%s]", (locale) => {
       });
    });
 
-   // it("should show underlined titles are not links", () => {
-   //    renderExperience();
-   //    const sectionTitles = [
-   //       sectionLabels.context,
-   //       sectionLabels.whatIDid,
-   //       sectionLabels.results,
-   //    ];
-
-   //    sectionTitles.forEach((title) => {
-   //       expect(
-   //          screen.getAllByRole("heading", { name: title }).length,
-   //       ).toBeGreaterThan(0);
-   //       expect(screen.queryAllByRole("link", { name: title })).toHaveLength(
-   //          0,
-   //       );
-   //    });
-   // });
-
    it("Should have backlink without any symbol readed by accessibility tools", () => {
       renderPage();
       const backLink = screen.getByRole("link", { name: /retour|back/i });
