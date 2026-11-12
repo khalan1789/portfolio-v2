@@ -1,4 +1,5 @@
 "use client";
+import CustomAppNavLink from "../components/button/custom-app-nav-link";
 import JobCard from "../components/card/job-card";
 import PageTitle from "../components/text/page-title";
 import { useLocale } from "@/context/useLocale";
@@ -6,6 +7,7 @@ import { useLocale } from "@/context/useLocale";
 export default function Experience() {
    const locale = useLocale();
    const isEn = locale?.locale === "en";
+
    const villyzImpacts = isEn
       ? ["x5 investments", "x4 investors", "+€2.6M raised during my time there"]
       : [
@@ -145,35 +147,46 @@ export default function Experience() {
                   isEn={isEn}
                />
             </div>
-            <section className="mt-15 border-t pt-5">
+            <section className="mt-15 border-t pt-5 mb-20">
                <h2 className="text-2xl">Formation</h2>
                <div className="flex flex-col mt-8 lg:flex-row lg:justify-between">
-                  <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] ">
-                     <h3 className="text-primary text-lg">
-                        Développeur web - Openclassrooms{" "}
-                        <i className="text-sm">2021</i>
-                     </h3>
-
-                     <h4 className="mt-4 lg:font-[16px] ">
-                        Apprentissage de tous les aspect du métier (front, back,
-                        full stack, SEO), via un parcours de réalisation de
-                        projets validés par un jury de professionnels.
-                     </h4>
-                     <button className="mt-8">Voir plus</button>
-                  </div>
                   <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%]">
                      <h3 className="text-primary text-lg">
                         The Arena Project - Fondamentaux du génie logiciel{" "}
                         <i className="text-sm">2022-2023</i>
                      </h3>
 
-                     <h4 className="lg:font-[16px] mt-4">
-                        Apprentissage des fondamentaux du génie logiciel,
-                        inspiré de la méthodologie de l&apos;École 42, sous
-                        JavaScript / TypeScript / NodeJs : algorithmie
-                        récursive, itérativité, backtracking, bases 10, bigO,
-                        arbres binaires, file system...
+                     <h4 className="lg:font-[16px] mt-4 mb-8 overflow-hidden">
+                        Inspiré de la méthodologie de l&apos;École 42,
+                        apprentissage des fondamentaux du génie logiciel :
+                        algorithmie récursive, itérativité, backtracking, bases
+                        10, bigO, arbres binaires, file system...
                      </h4>
+                     <CustomAppNavLink
+                        description={isEn ? "Show more" : "Voir plus"}
+                        direction="forward"
+                        href="/education/the-arena"
+                        ariaLabel=""
+                     />
+                  </div>
+                  <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] ">
+                     <h3 className="text-primary text-lg">
+                        Développeur web - Openclassrooms{" "}
+                        <i className="text-sm">2021</i>
+                     </h3>
+
+                     <h4 className="mt-4 lg:font-[16px] mb-10 lg:mt-10 lg:mb-15">
+                        Apprentissage de tous les aspect du métier (front, back,
+                        full stack, SEO), via un parcours de réalisation de
+                        projets validés par un jury de professionnels.
+                     </h4>
+                     <CustomAppNavLink
+                        description={isEn ? "Show more" : "Voir plus"}
+                        direction="forward"
+                        href="/education/openclassrooms"
+                        ariaLabel=""
+                     />
+                     {/* <button className="mt-8">Voir plus</button> */}
                   </div>
                </div>
             </section>
