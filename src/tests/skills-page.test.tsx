@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
 import Skills from "@/app/skills/page";
 
 describe("about page", () => {
-   it("should have no accessibility violations when closed", async () => {
+   it("should have no accessibility violations", async () => {
       const { container } = render(<Skills />);
       const results = await axe(container);
       expect(results).toHaveNoViolations();
