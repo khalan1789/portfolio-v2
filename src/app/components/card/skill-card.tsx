@@ -20,7 +20,7 @@ export default function SkillCard({ bg, children }: Props) {
    };
    return (
       <div
-         className={`rounded rounded-xl ${returnBg()} ${returnBorder()} p-2 mt-7 flex flex-col sm:p-3 sm:min-w-70 sm:p-3 mdPlus:p-5 mdPlus:mr-2 lg:p-8 lg:mr-0 lg:w-74`}
+         className={`rounded rounded-xl ${returnBg()} ${returnBorder()} p-2 mt-7 flex flex-col sm:p-3 sm:min-w-70 sm:p-3 mdPlus:p-5 mdPlus:mr-2 lg:p-6 lg:mr-0 lg:w-74`}
       >
          {children}
       </div>
