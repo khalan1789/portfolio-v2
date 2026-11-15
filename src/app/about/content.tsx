@@ -15,7 +15,7 @@ export default function AboutContent() {
             coloredTextFr="de moi"
             onStart
          />
-         <h2 className="mt-5 text-xl text-bold italic mdPlus:mt-4">
+         <h2 className="mt-5 text-xl font-bold italic mdPlus:mt-4">
             {locale?.locale === "en"
                ? "Understand before building"
                : "Comprendre avant de construire"}
@@ -81,12 +81,12 @@ export default function AboutContent() {
                               <strong>
                                  A dual perspective: product and business.
                               </strong>{" "}
-                              Face à une nouvelle fonctionnalité, je pense
-                              autant à la personne qui va l’utiliser qu’à son
-                              impact pour l’entreprise, aujourd’hui comme sur le
-                              long terme. Je pose la bonne question avant de
-                              foncer, et je propose une solution plus simple
-                              quand elle répond aussi bien au besoin.
+                              When looking at a new feature, I think as much
+                              about the person who will use it as about its
+                              impact on the business, both now and in the long
+                              run. I ask the right question before rushing in,
+                              and I suggest a simpler solution when it meets the
+                              need just as well.
                            </>
                         ) : (
                            <>
@@ -220,9 +220,9 @@ export default function AboutContent() {
                         ? "Dax (Landes, France)"
                         : "Dax (Landes)"}
                   </p>
-                  <h3 className="mt-5 font-light">
+                  <h4 className="mt-5 font-light">
                      {locale?.locale === "en" ? "Open to" : "Ouvert à"}
-                  </h3>
+                  </h4>
                   <p className="mt-1 font-bold">
                      {locale?.locale === "en"
                         ? "Permanent · Fixed-term · Freelance"

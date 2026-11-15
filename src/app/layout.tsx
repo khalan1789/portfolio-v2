@@ -4,6 +4,7 @@ import Script from "next/script";
 import AppProvider from "./components/provider/app-provider";
 import { luciole, lexend, openDyslexic } from "./styles/styles";
 import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 export const metadata: Metadata = {
    title: "Ben's portfolio",
@@ -39,6 +40,7 @@ export default function RootLayout({
             <AppProvider>
                <Header />
                {children}
+               <Footer />
             </AppProvider>
          </body>
       </html>

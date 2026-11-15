@@ -10,10 +10,12 @@ export default function NavbarMobile() {
    const [isOpen, setIsOpen] = useState<boolean>(false);
    const pathName = usePathname();
 
-   const toggleMenu = (e: React.MouseEvent) => {
-      e.preventDefault();
-      return setIsOpen(!isOpen);
+   const toggleMenu = () => {
+      return setIsOpen((wasOpen) => !wasOpen);
    };
+
+   const closeMenu = () => setIsOpen(false);
+   const isEn = locale?.locale === "en";
 
    return (
       <div
@@ -25,42 +27,46 @@ export default function NavbarMobile() {
                   href={"/"}
                   className="mt-8"
                   aria-current={pathName === "/" ? "page" : undefined}
+                  onClick={closeMenu}
                >
-                  {locale?.locale === "en" ? "Home" : "Accueil"}
+                  {isEn ? "Home" : "Accueil"}
                </Link>
                <Link
                   href={"/about"}
                   className="mt-8"
-                  aria-current={pathName === "/" ? "page" : undefined}
+                  aria-current={pathName === "/about" ? "page" : undefined}
+                  onClick={closeMenu}
                >
-                  {locale?.locale === "en" ? "About" : "À propos"}
+                  {isEn ? "About" : "À propos"}
                </Link>
                <Link
                   href={"/experience"}
                   className="mt-8"
-                  aria-current={pathName === "/" ? "page" : undefined}
+                  aria-current={pathName === "/experience" ? "page" : undefined}
+                  onClick={closeMenu}
                >
-                  {locale?.locale === "en" ? "Experience" : "Expériences"}
+                  {isEn ? "Experience" : "Expériences"}
                </Link>
                <Link
                   href={"/skills"}
                   className="mt-8"
                   aria-current={pathName === "/skills" ? "page" : undefined}
+                  onClick={closeMenu}
                >
-                  {locale?.locale === "en" ? "Skills" : "Compétences"}
+                  {isEn ? "Skills" : "Compétences"}
                </Link>
             </nav>
          )}
          <button
-            onClick={(e) => toggleMenu(e)}
-            className={`flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none ${isOpen && "w-[40px] mt-3 mr-2"}`}
+            onClick={toggleMenu}
+            className={`flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${isOpen && "w-[40px] mt-3 mr-2"}`}
             type="button"
             aria-label={
                isOpen
-                  ? locale?.locale === "en"
+                  ? isEn
                      ? "Close menu"
                      : "Fermer le menu"
-                  : locale?.locale === "en"
+                  : isEn
                     ? "Open menu"
                     : "Ouvrir le menu"
             }
