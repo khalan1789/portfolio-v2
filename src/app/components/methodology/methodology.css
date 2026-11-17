@@ -1,5 +1,5 @@
 .methodo-section-container {
-   clip-path: polygon(0 3.2%, 100% 0, 100% 100%, 0 96.8%);
+   clip-path: polygon(0 0, 100% 3.2%, 100% 96.8%, 0 100%);
    background-color: var(--card-secondary);
    width: 100%;
    min-height: 300px;

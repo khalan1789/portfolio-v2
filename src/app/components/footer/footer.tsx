@@ -65,7 +65,7 @@ export default function Footer() {
             />
          </div>
          <p className="text-tercary mb-10">
-            {isEn ? "Designed and built by" : "Designé et réalisé par"} Benjamin
+            {isEn ? "Designed and built by" : "Conçu et réalisé par"} Benjamin
             Ducau <span>· {returnYear}</span>
          </p>
       </footer>
