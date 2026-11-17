@@ -24,7 +24,7 @@ export default function CustomButtonLink({ label, size, type, url }: Props) {
       </Link>
    ) : (
       <Link
-         className={`border-primary text-primary rounded p-3 w-[220px] h-10 text-primary ${returnSize(size)}`}
+         className={`border border-primary text-primary rounded p-3 w-[220px] h-10 text-primary ${returnSize(size)} cursor-pointer flex justify-center items-center bg-card hover:shadow-xl`}
          href={url}
       >
          {label}
