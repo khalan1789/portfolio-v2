@@ -9,6 +9,7 @@ type Props = {
    description: string;
    impacts?: string[];
    isEn?: boolean;
+   animate?: string;
 };
 
 export default function JobCard({
@@ -19,9 +20,13 @@ export default function JobCard({
    description,
    impacts,
    isEn,
+   animate,
 }: Props) {
    return (
-      <div className="border-l-4 border-primary p-3 mt-10 hover:shadow-sm hover:grow-[2]">
+      <div
+         data-animate={animate}
+         className="border-l-4 border-primary p-3 mt-10 hover:shadow-sm hover:grow-[2]"
+      >
          <h3 className="text-2xl font-bold md:text-2xl">{job}</h3>
          <h4 className="mt-2 text-primary text-lg md:text-xl">{company}</h4>
          <span className="mt-1">{jobDuration}</span>

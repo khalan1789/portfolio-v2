@@ -37,7 +37,6 @@
 @theme inline {
    --color-background: var(--background);
    --color-light: var(--light);
-   --color-foreground: var(--foreground);
    --color-primary: var(--primary);
    --color-secondary: var(--secondary);
    --color-tercary: var(--tercary);
@@ -46,7 +45,7 @@
    --color-card-secondary: var(--card-secondary);
    --color-typography: var(--typography);
    --color-hero: var(--hero);
-   --color-hero-alt-: var(--hero-alt);
+   --color-hero-alt: var(--hero-alt);
    --color-checked: var(--checked);
    --font-sans:
       var(--font-luciole), var(--font-lexend), ui-sans-serif, system-ui,
@@ -56,6 +55,190 @@
 @theme {
    --breakpoint-xs: 33.125rem;
    --breakpoint-mdPlus: 53.125rem;
+
+   /* --animate-slide-in-top-left: slide-in-top-left 0.5s ease-out both;
+   --animate-slide-in-bottom-right: slide-in-bottom-right 0.5s ease-out both;
+
+   @keyframes slide-in-top-left {
+      from {
+         transform: translate(-30%, -15%);
+      }
+      to {
+         transform: translate(0, 0);
+      }
+   }
+
+   @keyframes slide-in-bottom-right {
+      from {
+         transform: translate(30%, 15%);
+      }
+      to {
+         transform: translate(0, 0);
+      }
+   } */
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+
+   [data-animate="reveal-up"],
+   [data-animate="hero-left"],
+   [data-animate="hero-right"] {
+      opacity: 0;
+      transform: translateY(-1.5rem);
+      transition:
+         opacity 700ms ease-out,
+         transform 700ms ease-out;
+      transition-delay: var(--animation-delay, 0ms);
+   }
+
+   [data-animate="reveal-up"][data-played],
+   [data-animate="hero-left"][data-played],
+   [data-animate="hero-right"][data-played] {
+      opacity: 1;
+      transform: none;
+   }
+
+   @media (min-width: 64rem) {
+      [data-animate="hero-left"] {
+         opacity: 1;
+         transform: translate(-40%, -15%);
+         transition: transform 750ms ease-out;
+         transition-delay: 0ms;
+      }
+
+      [data-animate="hero-right"] {
+         opacity: 1;
+         transform: translate(40%, 15%);
+         transition: transform 750ms ease-out;
+         transition-delay: 0ms;
+      }
+
+      [data-animate="from-bottom"] {
+         --from-opacity: 0.3;
+         --from-y: 3rem;
+         --fade-duration: 250ms;
+         --move-duration: 1100ms;
+         --move-easing: var(--ease-brake);
+      }
+
+      [data-animate="from-left"] {
+         --from-opacity: 0.3;
+         --from-x: -6rem;
+         --from-y: 0px;
+         --fade-duration: 250ms;
+         --move-duration: 1100ms;
+         --move-easing: var(--ease-brake);
+      }
+
+      [data-animate="from-right"] {
+         --from-opacity: 0.3;
+         --from-x: 6rem;
+         --from-y: 0px;
+         --fade-duration: 250ms;
+         --move-duration: 1100ms;
+         --move-easing: var(--ease-brake);
+      }
+   }
+
+   [data-animate][data-instant] {
+      transition: none;
+   }
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+   html:not([data-motion="reduced"]) {
+      /* Accélération puis freinage marqué en fin de course.
+         1er chiffre : plus il est grand, plus le départ est lent.
+         3e chiffre : plus il est proche de 0, plus le freinage est long. */
+      --ease-brake: cubic-bezier(0.5, 0, 0.1, 1);
+
+      /* Valeurs par défaut = cascade classique, de haut en bas.
+         Elles sont redéclarées sur chaque élément pour ne jamais hériter
+         de celles d'un parent animé. */
+      [data-animate] {
+         --from-opacity: 0;
+         --from-x: 0px;
+         --from-y: -1.5rem;
+         --fade-duration: 700ms;
+         --move-duration: 700ms;
+         --move-easing: ease-out;
+         --stagger: 1;
+
+         opacity: var(--from-opacity);
+         transform: translate(var(--from-x), var(--from-y));
+         transition:
+            opacity var(--fade-duration) ease-out,
+            transform var(--move-duration) var(--move-easing);
+         transition-delay: calc(var(--animation-delay, 0ms) * var(--stagger));
+      }
+
+      /* État final, posé par le script quand l'élément est vu */
+      [data-animate][data-played] {
+         opacity: 1;
+         transform: none;
+      }
+
+      /* Élément déjà vu pendant la session : pas de transition au retour */
+      [data-animate][data-instant] {
+         transition: none;
+      }
+
+      /* Animations réservées à lg, sous lg : cascade classique */
+      @media (min-width: 64rem) {
+         /* Hero : split, les deux blocs glissent ensemble */
+         [data-animate="hero-left"] {
+            --from-opacity: 1;
+            --from-x: -30%;
+            --from-y: -15%;
+            --move-duration: 900ms;
+            --stagger: 0;
+         }
+
+         [data-animate="hero-right"] {
+            --from-opacity: 1;
+            --from-x: 30%;
+            --from-y: 15%;
+            --move-duration: 900ms;
+            --stagger: 0;
+         }
+
+         :root {
+            /* Accélération puis freinage marqué en fin de course.
+         1er chiffre : plus il est grand, plus le départ est lent.
+         3e chiffre : plus il est proche de 0, plus le freinage est long. */
+            --ease-brake: cubic-bezier(0.5, 0, 0.1, 1);
+         }
+
+         /* Arrivée par le bas, avec freinage */
+         [data-animate="from-bottom"] {
+            --from-opacity: 0.3;
+            --from-y: 3rem;
+            --fade-duration: 250ms;
+            --move-duration: 1100ms;
+            --move-easing: var(--ease-brake);
+         }
+
+         /* Arrivée par la gauche, avec freinage */
+         [data-animate="from-left"] {
+            --from-opacity: 0.3;
+            --from-x: -6rem;
+            --from-y: 0px;
+            --fade-duration: 250ms;
+            --move-duration: 1100ms;
+            --move-easing: var(--ease-brake);
+         }
+
+         /* Arrivée par la droite, avec freinage */
+         [data-animate="from-right"] {
+            --from-opacity: 0.3;
+            --from-x: 6rem;
+            --from-y: 0px;
+            --fade-duration: 450ms;
+            --move-duration: 1400ms;
+            --move-easing: var(--ease-brake);
+         }
+      }
+   }
 }
 
 body {

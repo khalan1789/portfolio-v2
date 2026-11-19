@@ -5,6 +5,7 @@ import AppProvider from "./components/provider/app-provider";
 import { luciole, lexend, openDyslexic } from "./styles/styles";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import ScrollReveal from "./components/scroll/scroll-reveal";
 
 export const metadata: Metadata = {
    title: "Ben's portfolio",
@@ -42,6 +43,7 @@ export default function RootLayout({
                {children}
                <Footer />
             </AppProvider>
+            <ScrollReveal />
          </body>
       </html>
    );
