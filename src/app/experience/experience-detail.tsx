@@ -47,14 +47,25 @@ export default function ExperienceDetail({ experience }: Props) {
          />
          <div className="mt-14 flex flex-col lg:flex-row lg: mb-20">
             <div className="mdPlus:pr-[2rem]">
-               <h3 className="text-xl text-primary underline">
+               <h3
+                  data-animate="reveal-up"
+                  className="text-xl text-primary underline"
+               >
                   {sectionLabels.context}
                </h3>
-               <p className="mt-5">{experience.context[currentLocale]}</p>
+               <p data-animate="reveal-up" className="mt-5">
+                  {experience.context[currentLocale]}
+               </p>
 
                {experience.steps.map((step, index) => {
                   return (
-                     <section className="mt-14" key={index}>
+                     <section
+                        data-animate={
+                           experience.steps.length > 1 ? "" : "reveal-up"
+                        }
+                        className="mt-14"
+                        key={index}
+                     >
                         {step.title && (
                            <h3 className="text-2xl text-primary ">
                               {step.title[currentLocale]}
@@ -126,11 +137,11 @@ export default function ExperienceDetail({ experience }: Props) {
                         )}
                         {step.metrics && (
                            <>
-                              {step.metrics.title && (
-                                 <h3 className="text-xl text-primary mt-14 underline">
-                                    {step.metrics.title[currentLocale]}
-                                 </h3>
-                              )}
+                              {step.metrics.title &&
+                                 sectionSubHeader(
+                                    step.metrics.title[currentLocale],
+                                    "text-xl text-primary mt-14 underline",
+                                 )}
                               {step.metrics.description && (
                                  <p className="mt-5 mb-10">
                                     {step.metrics.description[currentLocale]}
@@ -166,6 +177,7 @@ export default function ExperienceDetail({ experience }: Props) {
                   bg="secondary"
                   title={sectionLabels.keyImpacts}
                   hasBottomMargin
+                  animate="from-right"
                >
                   <ul>
                      {experience.impacts.map((impact, index) => {
@@ -183,6 +195,7 @@ export default function ExperienceDetail({ experience }: Props) {
                   title={sectionLabels.technologies}
                   bg="card"
                   hasBottomMargin
+                  animate="from-right"
                >
                   <p className="flex flex-wrap mt-4 list-none">
                      {experience.technos.map((techno, index) => {
@@ -190,7 +203,11 @@ export default function ExperienceDetail({ experience }: Props) {
                      })}
                   </p>
                </InfoCard>
-               <InfoCard title={sectionLabels.tools} bg="card">
+               <InfoCard
+                  animate="from-right"
+                  title={sectionLabels.tools}
+                  bg="card"
+               >
                   <p className="flex flex-wrap mt-4 list-none">
                      {experience.tools.map((tool, index) => {
                         return <BubbleText key={index} description={tool} />;

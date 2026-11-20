@@ -155,12 +155,12 @@ export default function Experience() {
                />
             </div>
             <section className="mt-15 border-t pt-5 mb-20">
-               <h2 data-animate="reveal" className="text-2xl">
+               <h2 data-animate="reveal-up" className="text-2xl">
                   Formation
                </h2>
                <div className="flex flex-col mt-8 lg:flex-row lg:justify-between">
                   <div
-                     data-animate="reveal"
+                     data-animate="reveal-up"
                      className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%]"
                   >
                      <h3 className="text-primary text-lg">
@@ -186,7 +186,7 @@ export default function Experience() {
                      />
                   </div>
                   <div
-                     data-animate="reveal"
+                     data-animate="reveal-up"
                      className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] "
                   >
                      <h3 className="text-primary text-lg">
@@ -209,7 +209,6 @@ export default function Experience() {
                         href="/education/openclassrooms"
                         ariaLabel=""
                      />
-                     {/* <button className="mt-8">Voir plus</button> */}
                   </div>
                </div>
             </section>
