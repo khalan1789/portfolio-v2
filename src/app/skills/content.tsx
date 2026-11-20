@@ -8,20 +8,21 @@ export default function SkillsContent() {
    const locale = useLocale();
    return (
       <div className="max-w-5xl mx-auto 2xl:max-w-5xl">
-         <PageTitle
-            baseTextEn="My"
-            coloredTextEn=" Skills"
-            baseTextFr="Mes"
-            coloredTextFr=" Compétences"
-         />
-         <h2 className="mt-8 text-2xl mdPlus:mt-4 text-center">
-            {locale?.locale === "en"
-               ? "Stack and expertise"
-               : "Stack et expertise"}
-         </h2>
-
+         <div data-animate="reveal">
+            <PageTitle
+               baseTextEn="My"
+               coloredTextEn=" Skills"
+               baseTextFr="Mes"
+               coloredTextFr=" Compétences"
+            />
+            <h2 className="mt-8 text-2xl mdPlus:mt-4 text-center">
+               {locale?.locale === "en"
+                  ? "Stack and expertise"
+                  : "Stack et expertise"}
+            </h2>
+         </div>
          <div className="flex flex-col justify-around mt-10 p-2 sm:flex-row sm:flex-wrap mdPlus:justify-between">
-            <SkillCard bg="card">
+            <SkillCard animate="reveal-up" bg="card">
                <h3 className="text-primary text-lg font-bold md:text-xl">
                   Front-end
                </h3>
@@ -38,7 +39,7 @@ export default function SkillsContent() {
                   <CustomLi description="Next.js" type="secondary" />
                </ul>
             </SkillCard>
-            <SkillCard bg="card">
+            <SkillCard animate="reveal-up" bg="card">
                <h3 className="text-primary text-lg font-bold md:text-xl">
                   Back-end
                </h3>
@@ -54,7 +55,7 @@ export default function SkillsContent() {
                   <CustomLi description="Node.js" type="secondary" />
                </ul>
             </SkillCard>
-            <SkillCard bg="card">
+            <SkillCard animate="reveal-up" bg="card">
                <h3 className="text-primary text-lg font-bold md:text-xl">
                   {locale?.locale === "en" ? "Tools" : "Outils"}
                </h3>
@@ -70,7 +71,10 @@ export default function SkillsContent() {
                </ul>
             </SkillCard>
          </div>
-         <section className="border-primary border-t mt-10 lg:text-lg">
+         <section
+            data-animate={"reveal-up"}
+            className="border-primary border-t mt-10 lg:text-lg"
+         >
             <h4 className="mt-10 text-primary text-lg uppercase sm:mt-15 ">
                {locale?.locale === "en"
                   ? "Digital accessibility"
@@ -100,7 +104,10 @@ export default function SkillsContent() {
                </li>
             </ul>
          </section>
-         <section className="border-t border-primary mt-10 mb-15 sm:mt-15 lg:text-lg">
+         <section
+            data-animate={"reveal-up"}
+            className="border-t border-primary mt-10 mb-15 sm:mt-15 lg:text-lg"
+         >
             <h4 className="mt-10 uppercase text-primary sm:mt-15">
                {locale?.locale === "en"
                   ? "Others skills"

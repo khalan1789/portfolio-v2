@@ -17,9 +17,12 @@ export default function HomeContent() {
    const cardSizing = `w-full md:max-w-[30%] md:h-90 ${font?.font === "dyslexic" ? "lg:h-95" : "lg:h-70"}`;
    return (
       <>
-         <div className="hero-polygon flex h-[55rem] md:h-[35rem] md:justify-center bg-linear-to-r from-hero-alt to-hero ">
+         <div className="hero-polygon flex h-[55rem] md:h-[35rem] md:justify-center bg-linear-to-r from-hero to-hero ">
             <div className="flex flex-col h-full w-full relative md:flex-row md:max-w-[1088px] xl:md:max-w-[1288px]">
-               <div className="flex flex-col h-[350px] w-full relative md:h-full md:w-1/2 lg:w-[40%] profile-img-container">
+               <div
+                  data-animate="hero-left"
+                  className="flex flex-col h-[350px] w-full relative md:h-full md:w-1/2 lg:w-[40%] profile-img-container"
+               >
                   <Image
                      src={profileImg}
                      alt={isEn ? "Profile picture" : "Photo de profil"}
@@ -44,7 +47,10 @@ export default function HomeContent() {
                      </p>
                   </div>
                </div>
-               <div className="flex flex-col p-5 pt-8 md:w-1/2 md:justify-center lg:w-[60%]">
+               <div
+                  data-animate="hero-right"
+                  className="flex flex-col p-5 pt-8 md:w-1/2 md:justify-center lg:w-[60%] "
+               >
                   <h1 className="font-bold text-3xl text-tercary lg:text-[2.5rem]">
                      {isEn ? (
                         <>
@@ -84,15 +90,24 @@ export default function HomeContent() {
          </div>
          <section className="p-5 pt-15 flex flex-col items-center">
             {isEn ? (
-               <h2 className="text-2xl text-tercary font-bold mb-10 text-center md:text-[2rem]">
+               <h2
+                  data-animate="reveal-up"
+                  className="text-2xl text-tercary font-bold mb-10 text-center md:text-[2rem]"
+               >
                   Product-minded <CustomSpan label="Developpeur" />
                </h2>
             ) : (
-               <h2 className="text-2xl text-tercary font-bold mb-10 text-center md:text-[2rem] ">
+               <h2
+                  data-animate="reveal-up"
+                  className="text-2xl text-tercary font-bold mb-10 text-center md:text-[2rem] "
+               >
                   Développeur, <CustomSpan label="Orienté Produit" />
                </h2>
             )}
-            <p className="xs:p-1 md:text-xl md:text-center md:max-w-[80vw]">
+            <p
+               data-animate="reveal-up"
+               className="xs:p-1 md:text-xl md:text-center md:max-w-[80vw]"
+            >
                {isEn
                   ? "Code is a tool. What matters is the difference the product makes for the people who use it and for the business."
                   : "Le code est un outil. Ce qui compte, c'est ce que le produit change pour ceux qui l'utilisent et pour l'entreprise."}
@@ -113,8 +128,10 @@ export default function HomeContent() {
                         ? "Link to experiences page"
                         : "Lien vers la page expériences"
                   }
+                  animate
                />
                <Card
+                  data-animate="reveal-up"
                   title={
                      isEn
                         ? "Pragmatic about quality"
@@ -133,8 +150,10 @@ export default function HomeContent() {
                         ? "Link to skills page"
                         : "Lien vers la page compétences"
                   }
+                  animate
                />
                <Card
+                  data-animate="reveal-up"
                   title={
                      isEn
                         ? "Self-driven and adaptable"
@@ -153,6 +172,7 @@ export default function HomeContent() {
                   ariaLabel={
                      isEn ? "Link to about page" : "Lien vers la page à propos"
                   }
+                  animate
                />
             </div>
          </section>

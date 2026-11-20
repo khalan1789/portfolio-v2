@@ -3,6 +3,7 @@ type Props = React.PropsWithChildren<{
    title: string;
    hasBottomMargin?: boolean;
    useAsLi?: boolean;
+   animate?: string;
 }>;
 
 export default function InfoCard({
@@ -11,6 +12,7 @@ export default function InfoCard({
    hasBottomMargin,
    bg,
    useAsLi,
+   animate,
 }: Props) {
    const returnBg = () => {
       return bg === "card"
@@ -29,6 +31,7 @@ export default function InfoCard({
    };
    return useAsLi ? (
       <li
+         data-animate={animate}
          className={`rounded  p-5 text-center mdPlus:text-start lg:w-full ${hasBottomMargin && "mb-4 lg:mb-5"} ${returnBg()} ${returnBorder()}`}
       >
          <h3 className="mt-3 font-bold">{title}</h3>
@@ -36,6 +39,7 @@ export default function InfoCard({
       </li>
    ) : (
       <div
+         data-animate={animate}
          className={`rounded  p-5 text-center mdPlus:text-start lg:w-full ${hasBottomMargin && "mb-4 lg:mb-5"} ${returnBg()} ${returnBorder()}`}
       >
          <h3 className="mt-3 font-bold">{title}</h3>

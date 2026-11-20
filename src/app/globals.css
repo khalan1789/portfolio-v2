@@ -37,7 +37,6 @@
 @theme inline {
    --color-background: var(--background);
    --color-light: var(--light);
-   --color-foreground: var(--foreground);
    --color-primary: var(--primary);
    --color-secondary: var(--secondary);
    --color-tercary: var(--tercary);
@@ -46,7 +45,7 @@
    --color-card-secondary: var(--card-secondary);
    --color-typography: var(--typography);
    --color-hero: var(--hero);
-   --color-hero-alt-: var(--hero-alt);
+   --color-hero-alt: var(--hero-alt);
    --color-checked: var(--checked);
    --font-sans:
       var(--font-luciole), var(--font-lexend), ui-sans-serif, system-ui,
@@ -56,6 +55,91 @@
 @theme {
    --breakpoint-xs: 33.125rem;
    --breakpoint-mdPlus: 53.125rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   html:not([data-motion="reduced"]) {
+      --ease-brake: cubic-bezier(0.5, 0, 0.1, 1);
+
+      [data-animate="reveal-up"],
+      [data-animate="hero-left"],
+      [data-animate="hero-right"],
+      [data-animate="from-bottom"],
+      [data-animate="from-left"],
+      [data-animate="from-right"] {
+         --from-opacity: 0;
+         --from-x: 0px;
+         --from-y: -1.5rem;
+         --fade-duration: 700ms;
+         --move-duration: 700ms;
+         --move-easing: ease-out;
+         --stagger: 1;
+
+         opacity: var(--from-opacity);
+         transform: translate(var(--from-x), var(--from-y));
+         transition:
+            opacity var(--fade-duration) ease-out,
+            transform var(--move-duration) var(--move-easing);
+         transition-delay: calc(var(--animation-delay, 0ms) * var(--stagger));
+
+         /* Final state, set by the script when the element is seen */
+         &[data-played] {
+            opacity: 1;
+            transform: none;
+         }
+
+         /* Element already seen during the session: no transition upon return */
+         &[data-instant] {
+            transition: none;
+         }
+      }
+      @media (min-width: 64rem) {
+         [data-animate="hero-left"] {
+            --from-opacity: 1;
+            --from-x: -30%;
+            --from-y: -15%;
+            --move-duration: 900ms;
+            --stagger: 0;
+         }
+
+         [data-animate="hero-right"] {
+            --from-opacity: 1;
+            --from-x: 30%;
+            --from-y: 15%;
+            --move-duration: 900ms;
+            --stagger: 0;
+         }
+
+         /* Arrival from below, with braking */
+         [data-animate="from-bottom"] {
+            --from-opacity: 0.3;
+            --from-y: 3rem;
+            --fade-duration: 250ms;
+            --move-duration: 1100ms;
+            --move-easing: var(--ease-brake);
+         }
+
+         /* Arrival from left, with braking */
+         [data-animate="from-left"] {
+            --from-opacity: 0.3;
+            --from-x: -6rem;
+            --from-y: 0px;
+            --fade-duration: 250ms;
+            --move-duration: 1100ms;
+            --move-easing: var(--ease-brake);
+         }
+
+         /* Arrival from right, with braking */
+         [data-animate="from-right"] {
+            --from-opacity: 0.3;
+            --from-x: 6rem;
+            --from-y: 0px;
+            --fade-duration: 450ms;
+            --move-duration: 1400ms;
+            --move-easing: var(--ease-brake);
+         }
+      }
+   }
 }
 
 body {

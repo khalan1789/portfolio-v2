@@ -32,9 +32,13 @@ export default function ExperienceHeader({
             />
          </div>
 
-         <h1 className="mt-1 font-bold text-4xl">{job}</h1>
-         <h2 className="mt-4 text-primary text-2xl">{company}</h2>
-         <div className="flex mt-3 lg:mt-4">
+         <h1 data-animate="reveal-up" className="mt-1 font-bold text-4xl">
+            {job}
+         </h1>
+         <h2 data-animate="reveal-up" className="mt-4 text-primary text-2xl">
+            {company}
+         </h2>
+         <div data-animate="reveal-up" className="flex mt-3 lg:mt-4">
             <span className="">100 % {isEn ? "Remote" : "Télétravail"}</span>
             <span className="ml-2 mr-2"> • </span>
             <span>{period}</span>

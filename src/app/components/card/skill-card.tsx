@@ -1,8 +1,9 @@
 type Props = React.PropsWithChildren<{
    bg: "card" | "secondary";
+   animate?: string;
 }>;
 
-export default function SkillCard({ bg, children }: Props) {
+export default function SkillCard({ bg, children, animate }: Props) {
    const returnBg = () => {
       return bg === "card"
          ? "bg-card"
@@ -20,6 +21,7 @@ export default function SkillCard({ bg, children }: Props) {
    };
    return (
       <div
+         data-animate={animate}
          className={`rounded rounded-xl ${returnBg()} ${returnBorder()} p-2 mt-7 flex flex-col sm:p-3 sm:min-w-70 sm:p-3 mdPlus:p-5 mdPlus:mr-2 lg:p-6 lg:mr-0 lg:w-74`}
       >
          {children}

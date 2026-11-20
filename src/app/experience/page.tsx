@@ -55,17 +55,19 @@ export default function Experience() {
    return (
       <main className="p-2 mdPlus:pl-5 mdPlus:pr-5">
          <div className="max-w-5xl mx-auto 2xl:max-w-5xl">
-            <PageTitle
-               baseTextEn="Professionnal "
-               coloredTextEn="Experience"
-               baseTextFr="Expérience "
-               coloredTextFr="Professionnelle"
-            />
-            <h2 className="mt-8 text-lg mdPlus:text-2xl text-center mdPlus:mt-4">
-               {isEn
-                  ? "My journey through diverse roles"
-                  : "Mon parcours à travers mes divers rôles"}
-            </h2>
+            <div data-animate="from-bottom">
+               <PageTitle
+                  baseTextEn="Professionnal "
+                  coloredTextEn="Experience"
+                  baseTextFr="Expérience "
+                  coloredTextFr="Professionnelle"
+               />
+               <h2 className="mt-8 text-lg mdPlus:text-2xl text-center mdPlus:mt-4">
+                  {isEn
+                     ? "My journey through diverse roles"
+                     : "Mon parcours à travers mes divers rôles"}
+               </h2>
+            </div>
             <div className="mt-15 lg:mt-28">
                <JobCard
                   company="Villyz"
@@ -83,6 +85,7 @@ export default function Experience() {
                   jobLink="/experience/villyz"
                   impacts={villyzImpacts}
                   isEn={isEn}
+                  animate="from-left"
                />
                <JobCard
                   company={
@@ -102,6 +105,7 @@ export default function Experience() {
                   jobLink="/experience/website-redesign"
                   impacts={buildrhImpacts}
                   isEn={isEn}
+                  animate="from-right"
                />
                <JobCard
                   company="Repozen"
@@ -119,6 +123,7 @@ export default function Experience() {
                   jobLink="/experience/repozen"
                   impacts={repozenImpacts}
                   isEn={isEn}
+                  animate="from-left"
                />
                <JobCard
                   company="Be Swarm"
@@ -132,6 +137,7 @@ export default function Experience() {
                   jobLink="/experience/beswarm"
                   impacts={beSwarmIpacts}
                   isEn={isEn}
+                  animate="from-right"
                />
                <JobCard
                   company="Modulo-tech"
@@ -145,12 +151,18 @@ export default function Experience() {
                   jobLink="/experience/modulo-tech"
                   impacts={moduloImpacts}
                   isEn={isEn}
+                  animate="from-left"
                />
             </div>
             <section className="mt-15 border-t pt-5 mb-20">
-               <h2 className="text-2xl">Formation</h2>
+               <h2 data-animate="reveal-up" className="text-2xl">
+                  Formation
+               </h2>
                <div className="flex flex-col mt-8 lg:flex-row lg:justify-between">
-                  <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%]">
+                  <div
+                     data-animate="reveal-up"
+                     className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%]"
+                  >
                      <h3 className="text-primary text-lg">
                         {isEn
                            ? "The Arena Project - Software Engineering Fundamentals"
@@ -173,7 +185,10 @@ export default function Experience() {
                         ariaLabel=""
                      />
                   </div>
-                  <div className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] ">
+                  <div
+                     data-animate="reveal-up"
+                     className="mt-4 border border-primary bg-card rounded-xl p-4 lg:w-[47%] "
+                  >
                      <h3 className="text-primary text-lg">
                         {isEn
                            ? "Web Developer - Openclassrooms"
@@ -194,7 +209,6 @@ export default function Experience() {
                         href="/education/openclassrooms"
                         ariaLabel=""
                      />
-                     {/* <button className="mt-8">Voir plus</button> */}
                   </div>
                </div>
             </section>

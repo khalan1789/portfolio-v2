@@ -38,7 +38,10 @@ export default function Footer() {
 
    return (
       <footer className="w-full h-20 text-center flex flex-col justify-center items-center gap-5 mt-14">
-         <div className="flex w-full justify-around items-center sm:w-70  lg:ml-4 lg:min-w-40">
+         <div
+            data-animate="reveal-up"
+            className="flex w-full justify-around items-center sm:w-70  lg:ml-4 lg:min-w-40"
+         >
             <MediaIcon
                href="https://www.linkedin.com/in/benjamin-ducau/"
                icon={linkedinLogo()}
@@ -64,7 +67,7 @@ export default function Footer() {
                width={100}
             />
          </div>
-         <p className="text-tercary mb-10">
+         <p data-animate="reveal-up" className="text-tercary mb-10">
             {isEn ? "Designed and built by" : "Conçu et réalisé par"} Benjamin
             Ducau <span>· {returnYear}</span>
          </p>
