@@ -112,7 +112,7 @@ export default function HomeContent() {
                   ? "Code is a tool. What matters is the difference the product makes for the people who use it and for the business."
                   : "Le code est un outil. Ce qui compte, c'est ce que le produit change pour ceux qui l'utilisent et pour l'entreprise."}
             </p>
-            <div className="p-5 pt-12 flex flex-col justify-between items-center h-230 md:flex-row md:w-full md:p-3 md:pt-4 md:h-120 lg:max-w-[1200px] ">
+            <div className="p-5 pt-12 flex flex-col justify-between items-center h-285 2xs:h-255 xs:h-210 md:flex-row md:w-full md:p-3 md:pt-4 md:h-120 lg:max-w-[1200px] ">
                <Card
                   title={isEn ? "User centric" : "Centré utilisateur"}
                   description={

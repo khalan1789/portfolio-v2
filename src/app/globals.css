@@ -55,6 +55,7 @@
 @theme {
    --breakpoint-xs: 33.125rem;
    --breakpoint-mdPlus: 53.125rem;
+   --breakpoint-2xs: 21.875rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
