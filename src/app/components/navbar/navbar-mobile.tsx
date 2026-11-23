@@ -55,6 +55,14 @@ export default function NavbarMobile() {
                >
                   {isEn ? "Skills" : "Compétences"}
                </Link>
+               <Link
+                  href={"/contact"}
+                  className="mt-8"
+                  aria-current={pathName === "/contact" ? "page" : undefined}
+                  onClick={closeMenu}
+               >
+                  Contact
+               </Link>
             </nav>
          )}
          <button

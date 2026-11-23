@@ -263,7 +263,7 @@ export default function AboutContent() {
                      label={
                         locale?.locale === "en" ? "Contact me" : "Me contacter"
                      }
-                     url={"/skills"}
+                     url={"/contact"}
                   />
                </div>
             </aside>

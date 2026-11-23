@@ -81,7 +81,7 @@ export default function HomeContent() {
                      <CustomButtonLink
                         label={isEn ? "Contact me" : "Me contacter"}
                         type="reverse"
-                        url="/skills"
+                        url="/contact"
                         size="large"
                      />
                   </div>

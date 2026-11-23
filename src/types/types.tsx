@@ -17,7 +17,7 @@ export type LocaleContextValue = {
    setLocale: Dispatch<SetStateAction<Locale>>;
 };
 
-export type AppUrl = "/" | "/about" | "/experience" | "/skills";
+export type AppUrl = "/" | "/about" | "/experience" | "/skills" | "/contact";
 
 export type FontContextValue = {
    font: Font;

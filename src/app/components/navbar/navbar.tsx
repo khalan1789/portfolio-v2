@@ -8,7 +8,7 @@ export default function Navbar() {
    const pathName = usePathname();
 
    return (
-      <div className="flex w-full justify-around items-center h-full">
+      <div className="flex w-full justify-between items-center h-full xl:justify-between">
          <NavLink
             href={"/"}
             label={locale?.locale === "en" ? "Home" : "Accueil"}
@@ -29,6 +29,7 @@ export default function Navbar() {
             label={locale?.locale === "en" ? "Skills" : "Compétences"}
             selectedUrl={pathName}
          />
+         <NavLink href={"/contact"} label="Contact" selectedUrl={pathName} />
       </div>
    );
 }
