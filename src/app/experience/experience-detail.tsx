@@ -20,7 +20,7 @@ export default function ExperienceDetail({ experience }: Props) {
 
    const sectionSubHeader = (contain: string, style?: string) => {
       if (experience.steps.length > 1) {
-         return <h4 className={`experience-subtitle ${style}`}>{contain}</h4>;
+         return <h4 className={`${style}`}>{contain}</h4>;
       }
       return <h3 className={style}>{contain}</h3>;
    };
@@ -29,7 +29,7 @@ export default function ExperienceDetail({ experience }: Props) {
       if (experience.steps.length > 1) {
          return <h5 className={`experience-subtitle ${style}`}>{contain}</h5>;
       }
-      return <h4 className={style}>{contain}</h4>;
+      return <h4 className={`experience-subtitle ${style}`}>{contain}</h4>;
    };
 
    const testimonyTitle = {
@@ -45,15 +45,15 @@ export default function ExperienceDetail({ experience }: Props) {
             period={experience.period[currentLocale]}
             isEn={currentLocale === "en"}
          />
-         <div className="mt-14 flex flex-col lg:flex-row lg: mb-20">
+         <div className="mt-14 flex flex-col lg:flex-row mb-10 lg:mb-20">
             <div className="mdPlus:pr-[2rem]">
                <h3
                   data-animate="reveal-up"
-                  className="text-xl text-primary underline"
+                  className="text-xl text-primary font-bold border-l-4 border-typography pl-3"
                >
                   {sectionLabels.context}
                </h3>
-               <p data-animate="reveal-up" className="mt-5">
+               <p data-animate="reveal-up" className="mt-4 ">
                   {experience.context[currentLocale]}
                </p>
 
@@ -63,7 +63,7 @@ export default function ExperienceDetail({ experience }: Props) {
                         data-animate={
                            experience.steps.length > 1 ? "" : "reveal-up"
                         }
-                        className="mt-14"
+                        className="mt-14 lg:mt-20 max-w-[62ch]"
                         key={index}
                      >
                         {step.title && (
@@ -80,7 +80,7 @@ export default function ExperienceDetail({ experience }: Props) {
                            <section>
                               {sectionSubHeader(
                                  sectionLabels.situation,
-                                 "mt-6 font-bold",
+                                 "mt-6 font-bold text-lg",
                               )}
                               <p className="mt-4">
                                  {step.situation[currentLocale]}
@@ -89,7 +89,7 @@ export default function ExperienceDetail({ experience }: Props) {
                         )}
                         {sectionSubHeader(
                            sectionLabels.whatIDid,
-                           "text-xl text-primary underline mt-8",
+                           "border-l-4 border-typography pl-3 text-xl text-primary mt-10 font-bold lg:mt-12",
                         )}
                         {step.sections?.map((section, index) => {
                            return (
@@ -97,9 +97,9 @@ export default function ExperienceDetail({ experience }: Props) {
                                  {section.title &&
                                     listHeader(
                                        section.title[currentLocale],
-                                       "font-bold mt-5 lg:mt-8",
+                                       "font-bold mt-6 lg:mt-8",
                                     )}
-                                 <ul className=" pl-5 classic-li mt-3 lg:mt-8">
+                                 <ul className=" pl-5 classic-li mt-4 mb-8">
                                     {section.items.map((item, index) => {
                                        return (
                                           <CustomLi
@@ -115,7 +115,7 @@ export default function ExperienceDetail({ experience }: Props) {
                         })}
                         {sectionSubHeader(
                            sectionLabels.results,
-                           "text-xl text-primary underline mt-10",
+                           "border-l-4 border-typography pl-3 text-xl text-primary mt-10 font-bold lg:mt-12",
                         )}
                         {step.results !== undefined &&
                         step.results.length > 1 ? (
@@ -131,7 +131,7 @@ export default function ExperienceDetail({ experience }: Props) {
                               })}
                            </ul>
                         ) : (
-                           <p className="mt-5">
+                           <p className="mt-5 lg:mt-6">
                               {step.results![0][currentLocale]}
                            </p>
                         )}
@@ -140,7 +140,7 @@ export default function ExperienceDetail({ experience }: Props) {
                               {step.metrics.title &&
                                  sectionSubHeader(
                                     step.metrics.title[currentLocale],
-                                    "text-xl text-primary mt-14 underline",
+                                    "border-l-4 border-typography pl-3 text-xl text-primary mt-14 font-bold",
                                  )}
                               {step.metrics.description && (
                                  <p className="mt-5 mb-10">
@@ -161,7 +161,7 @@ export default function ExperienceDetail({ experience }: Props) {
                                  <div>
                                     {sectionSubHeader(
                                        testimonyTitle[currentLocale],
-                                       "mt-10 font-bold mb-5",
+                                       "pl-3 mt-10 font-bold mb-5",
                                     )}
                                     {step.metrics.citation[currentLocale]}
                                  </div>

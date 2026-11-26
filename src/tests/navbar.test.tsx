@@ -35,11 +35,12 @@ const expLabelInEn: string = "Experience";
 const homeLabelInEn: string = "Home";
 const skillsLabelInEn: string = "Skills";
 const aboutLabelInEn: string = "About";
+const contactLabel: string = "Contact";
 
 describe("Navbar", () => {
    it("should have links", () => {
       render(<Navbar />);
-      expect(screen.getAllByRole("link")).length(4);
+      expect(screen.getAllByRole("link")).length(5);
    });
    it("should redirect on skills", () => {
       render(<Navbar />);
@@ -60,6 +61,11 @@ describe("Navbar", () => {
       render(<Navbar />);
       const expLink = screen.getAllByText(homeLabelInFr);
       expect(expLink[0]).toHaveAttribute("href", "/");
+   });
+   it("should redirect on Contact", () => {
+      render(<Navbar />);
+      const expLink = screen.getAllByText(contactLabel);
+      expect(expLink[0]).toHaveAttribute("href", "/contact");
    });
 });
 
@@ -86,6 +92,9 @@ describe("Navbar - keyboard navigation", () => {
 
       await user.tab();
       expect(screen.getByRole("link", { name: skillsLabelInFr })).toHaveFocus();
+
+      await user.tab();
+      expect(screen.getByRole("link", { name: contactLabel })).toHaveFocus();
    });
 });
 

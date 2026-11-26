@@ -62,11 +62,11 @@ export default function Experience() {
                   baseTextFr="Expérience "
                   coloredTextFr="Professionnelle"
                />
-               <h2 className="mt-8 text-lg mdPlus:text-2xl text-center mdPlus:mt-4">
+               <p className="p-as-subtitle text-center">
                   {isEn
                      ? "My journey through diverse roles"
                      : "Mon parcours à travers mes divers rôles"}
-               </h2>
+               </p>
             </div>
             <div className="mt-15 lg:mt-28">
                <JobCard
