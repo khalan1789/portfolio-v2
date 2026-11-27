@@ -15,7 +15,7 @@ export default function ExperienceHeader({
 }: Props) {
    return (
       <>
-         <div className="mt-18 mb-10">
+         <div className="mt-8 lg:mt-10">
             <CustomAppNavLink
                description={
                   isEn
@@ -31,14 +31,19 @@ export default function ExperienceHeader({
                direction="back"
             />
          </div>
-
-         <h1 data-animate="reveal-up" className="mt-1 font-bold text-4xl">
+         <h1
+            data-animate="reveal-up"
+            className="font-bold text-2xl mt-6 lg:mt-8 lg:text-4xl"
+         >
             {job}
          </h1>
-         <h2 data-animate="reveal-up" className="mt-4 text-primary text-2xl">
+         <h2
+            data-animate="reveal-up"
+            className="mt-2 text-primary text-xl lg:text-2xl"
+         >
             {company}
          </h2>
-         <div data-animate="reveal-up" className="flex mt-3 lg:mt-4">
+         <div data-animate="reveal-up" className="flex mt-2 lg:mt-1">
             <span className="">100 % {isEn ? "Remote" : "Télétravail"}</span>
             <span className="ml-2 mr-2"> • </span>
             <span>{period}</span>

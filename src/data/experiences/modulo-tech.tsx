@@ -3,6 +3,11 @@ import { Experience } from "@/types/types";
 
 export const ModuloTech: Experience = {
    slug: "modulo-tech",
+   metadatas: {
+      title: "Modulo Tech - Développeur full stack",
+      description:
+         "Un forum social conçu de A à Z en autonomie : React, Redux Toolkit, Node.js et MongoDB, avec une API sécurisée selon l'OWASP et une conformité RGPD.",
+   },
    company: { en: "Modulo Tech", fr: "Modulo Tech" },
    role: {
       fr: "Développeur Full-Stack",

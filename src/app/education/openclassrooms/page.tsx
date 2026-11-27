@@ -1,4 +1,11 @@
 import OpenclassroomsContent from "@/app/education/openclassrooms/content";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "Formation OpenClassrooms",
+   description:
+      "Le résumé parcours de formation de Benjamin Ducau via OpenClassrooms, le concept et les projets réalisés",
+};
 
 export default function Openclassrooms() {
    return (

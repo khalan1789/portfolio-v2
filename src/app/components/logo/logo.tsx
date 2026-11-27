@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 import logoLight from "../../../../public/images/logo_brandind_ouvert.svg";
 import logoDark from "../../../../public/images/logo-darkmode.svg";
 import logoMonoDark from "../../../../public/images/logo-mono-noir-sur-blanc.svg";

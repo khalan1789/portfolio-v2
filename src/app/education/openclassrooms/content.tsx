@@ -251,7 +251,7 @@ export default function OpenclassroomsContent() {
                   description={
                      <>
                         <ExternalLink
-                           href="https://github.com/khalan1789/Project-Reservia"
+                           href="https://khalan1789.github.io/Project-Reservia/"
                            ariaLabel={
                               isEn
                                  ? "link to the github reservia's project, in a new tab"
@@ -273,19 +273,19 @@ export default function OpenclassroomsContent() {
                   description={
                      <>
                         <ExternalLink
-                           href="https://github.com/khalan1789/OhMyFood"
+                           href="https://khalan1789.github.io/OhMyFood/index.html"
                            ariaLabel={
                               isEn
-                                 ? "link to the github OhMyFood's project, in a new tab"
-                                 : "lien vers le repo github du projet OhMyFood, dans un nouvel onglet"
+                                 ? "link to the OhMyFood's website, in a new tab"
+                                 : "lien vers le site OhMyFood, dans un nouvel onglet"
                            }
                         >
                            OhMyFood
                         </ExternalLink>
                         <span>
                            {isEn
-                              ? " : mobile-first approach, CSS animations, Sass"
-                              : " : approche mobile-first, animations CSS, Sass"}
+                              ? " : mobile-first approach, CSS animations (page loading, likes on hover, etc.), Sass. Open and you will see"
+                              : " : approche mobile-first, animations CSS (chargement de la page, likes au survol, etc...), Sass. Ouvrez et vous verrez"}
                         </span>
                      </>
                   }

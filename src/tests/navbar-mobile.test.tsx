@@ -106,4 +106,13 @@ describe("NavbarMobile", () => {
       expect(expInFr).not.toBeInTheDocument();
       expect(expInFr.getAttribute("href")).toBe(expInEn.getAttribute("href"));
    });
+   // it("should also have contact link", async () => {
+   //    render(<NavbarMobile />);
+   //    const user = userEvent.setup();
+   //    const burgerButton = screen.getByRole("button");
+   //    await user.click(burgerButton);
+
+   //    const contactLink = screen.getByRole("link", { name: "Contact" });
+   //    expect(contactLink).toBeInTheDocument();
+   // });
 });

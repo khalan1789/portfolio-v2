@@ -2,6 +2,11 @@ import { Experience } from "@/types/types";
 
 export const WebsiteRedesign: Experience = {
    slug: "website-redesign",
+   metadatas: {
+      title: "Refonte accessible - Mission freelance",
+      description:
+         "Plateforme associative dédiée à la santé mentale, au sein d'une équipe pluridisciplinaire : portail partenaires et blog en Next.js et TRefonte d'un site vieillissant en site accessible à tous selon les standards WCAG : modes daltonien et monochrome, police adaptée, administration autonome.",
+   },
    company: {
       en: "Freelance project - Accessibility & UX",
       fr: "Mission freelance - Accessibilité et UX",
