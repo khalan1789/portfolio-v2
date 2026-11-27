@@ -63,16 +63,22 @@ export default function ExperienceDetail({ experience }: Props) {
                         data-animate={
                            experience.steps.length > 1 ? "" : "reveal-up"
                         }
-                        className="mt-14 lg:mt-20 max-w-[62ch]"
+                        className={
+                           experience.steps.length > 1
+                              ? index === 0
+                                 ? "mt-10 lg:mt-12"
+                                 : "mt-14 lg:mt-20"
+                              : undefined
+                        }
                         key={index}
                      >
                         {step.title && (
-                           <h3 className="text-2xl text-primary ">
+                           <h3 className="text-2xl text-primary font-bold">
                               {step.title[currentLocale]}
                            </h3>
                         )}
                         {step.period && (
-                           <p className="mt-2">
+                           <p className="mt-1">
                               <i>{step.period[currentLocale]}</i>
                            </p>
                         )}
@@ -97,9 +103,15 @@ export default function ExperienceDetail({ experience }: Props) {
                                  {section.title &&
                                     listHeader(
                                        section.title[currentLocale],
-                                       "font-bold mt-6 lg:mt-8",
+                                       "font-bold mt-4 ",
                                     )}
-                                 <ul className=" pl-5 classic-li mt-4 mb-8">
+                                 <ul
+                                    className={
+                                       section.title
+                                          ? " pl-5 classic-li mt-4 mb-8"
+                                          : " pl-5 classic-li mt-6 mb-8"
+                                    }
+                                 >
                                     {section.items.map((item, index) => {
                                        return (
                                           <CustomLi
@@ -131,7 +143,7 @@ export default function ExperienceDetail({ experience }: Props) {
                               })}
                            </ul>
                         ) : (
-                           <p className="mt-5 lg:mt-6">
+                           <p className="mt-4">
                               {step.results![0][currentLocale]}
                            </p>
                         )}
@@ -140,10 +152,10 @@ export default function ExperienceDetail({ experience }: Props) {
                               {step.metrics.title &&
                                  sectionSubHeader(
                                     step.metrics.title[currentLocale],
-                                    "border-l-4 border-typography pl-3 text-xl text-primary mt-14 font-bold",
+                                    "border-l-4 border-typography pl-3 text-xl text-primary mt-14 font-bold lg:mt-20",
                                  )}
                               {step.metrics.description && (
-                                 <p className="mt-5 mb-10">
+                                 <p className="mt-6 mb-6">
                                     {step.metrics.description[currentLocale]}
                                  </p>
                               )}
@@ -153,7 +165,7 @@ export default function ExperienceDetail({ experience }: Props) {
                                  />
                               )}
                               {step.metrics.tableSource && (
-                                 <p className="mt-5 italic">
+                                 <p className="mt-3 italic">
                                     {step.metrics.tableSource[currentLocale]}
                                  </p>
                               )}
@@ -161,7 +173,7 @@ export default function ExperienceDetail({ experience }: Props) {
                                  <div>
                                     {sectionSubHeader(
                                        testimonyTitle[currentLocale],
-                                       "pl-3 mt-10 font-bold mb-5",
+                                       "pl-3 mt-14 font-bold mb-4 lg:mt-20",
                                     )}
                                     {step.metrics.citation[currentLocale]}
                                  </div>
