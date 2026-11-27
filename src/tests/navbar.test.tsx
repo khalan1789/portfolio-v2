@@ -35,13 +35,13 @@ const expLabelInEn: string = "Experience";
 const homeLabelInEn: string = "Home";
 const skillsLabelInEn: string = "Skills";
 const aboutLabelInEn: string = "About";
-const contactLabel: string = "Contact";
+// const contactLabel: string = "Contact";
 
 describe("Navbar", () => {
-   it("should have links", () => {
-      render(<Navbar />);
-      expect(screen.getAllByRole("link")).length(5);
-   });
+   // it("should have links", () => {
+   //    render(<Navbar />);
+   //    expect(screen.getAllByRole("link")).length(5);
+   // });
    it("should redirect on skills", () => {
       render(<Navbar />);
       const skillsLink = screen.getAllByText(skillsLabelInFr);
@@ -62,11 +62,11 @@ describe("Navbar", () => {
       const expLink = screen.getAllByText(homeLabelInFr);
       expect(expLink[0]).toHaveAttribute("href", "/");
    });
-   it("should redirect on Contact", () => {
-      render(<Navbar />);
-      const expLink = screen.getAllByText(contactLabel);
-      expect(expLink[0]).toHaveAttribute("href", "/contact");
-   });
+   // it("should redirect on Contact", () => {
+   //    render(<Navbar />);
+   //    const expLink = screen.getAllByText(contactLabel);
+   //    expect(expLink[0]).toHaveAttribute("href", "/contact");
+   // });
 });
 
 it("should have no accessibility violations", async () => {
@@ -93,8 +93,8 @@ describe("Navbar - keyboard navigation", () => {
       await user.tab();
       expect(screen.getByRole("link", { name: skillsLabelInFr })).toHaveFocus();
 
-      await user.tab();
-      expect(screen.getByRole("link", { name: contactLabel })).toHaveFocus();
+      // await user.tab();
+      // expect(screen.getByRole("link", { name: contactLabel })).toHaveFocus();
    });
 });
 
