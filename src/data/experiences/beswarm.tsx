@@ -2,6 +2,11 @@ import { Experience } from "@/types/types";
 
 export const BeSwarm: Experience = {
    slug: "beswarm",
+   metadatas: {
+      title: "BeSwarm - Développeur front-end",
+      description:
+         "Conception du front-end d'une application de gestion bancaire en équipe de quatre : React, Tailwind CSS, tests automatisés et authentification OAuth2.",
+   },
    company: { en: "BeSwarm", fr: "BeSwarm" },
    role: {
       fr: "Développeur Front-End",

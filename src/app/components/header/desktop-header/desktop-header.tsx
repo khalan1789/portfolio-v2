@@ -5,7 +5,7 @@ import AccessibilityModal from "../../modal/accessibility-modal";
 
 export default function DesktopHeader() {
    return (
-      <div className="flex p-3 content-center h-[90px] border-b border-primary justify-between hidden lg:flex">
+      <div className="flex p-3 content-center h-[90px] border-b border-primary justify-between hidden lg:flex 2xl:max-w-[1800px] 2xl:mx-auto 2xl:border-b-0">
          <LogoContainer />
          <div className="w-3/6 justify-center">
             <Navbar />

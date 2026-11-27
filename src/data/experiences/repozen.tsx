@@ -3,6 +3,11 @@ import { Experience } from "@/types/types";
 
 export const Repozen: Experience = {
    slug: "repozen",
+   metadatas: {
+      title: "Repozen - Développeur front-end puis full stack",
+      description:
+         "Plateforme associative dédiée à la santé mentale, au sein d'une équipe pluridisciplinaire : portail partenaires et blog en Next.js et TypeScript, CI/CD. Plateforme en production aujourd'hui.",
+   },
    company: { en: "Repozen", fr: "Repozen" },
    role: {
       fr: "Développeur Front-End, puis Développeur Full-Stack",

@@ -4,6 +4,11 @@ import { Experience } from "@/types/types";
 
 export const Villyz: Experience = {
    slug: "villyz",
+   metadatas: {
+      title: "Villyz - Développeur full stack et référent technique",
+      description:
+         "Développeur full stack (React, C#/.NET) puis référent technique d'une plateforme fintech encadrée par l'AMF : paiements, conformité, production.",
+   },
    company: { en: "Villyz", fr: "Villyz" },
    role: {
       fr: "Développeur Full-Stack, puis Référent Technique Produit",

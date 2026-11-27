@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Dispatch, ReactNode, SetStateAction } from "react";
 
 export type Theme =
@@ -17,7 +18,7 @@ export type LocaleContextValue = {
    setLocale: Dispatch<SetStateAction<Locale>>;
 };
 
-export type AppUrl = "/" | "/about" | "/experience" | "/skills";
+export type AppUrl = "/" | "/about" | "/experience" | "/skills" | "/education";
 
 export type FontContextValue = {
    font: Font;
@@ -41,6 +42,7 @@ export type Experience = {
    impacts: LocalizedContent[];
    technos: string[];
    tools: string[];
+   metadatas: Metadata;
 };
 
 export type Section = {
